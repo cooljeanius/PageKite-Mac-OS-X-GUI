@@ -29,6 +29,7 @@
     if (self) 
     {
         running = FALSE;
+        connected = FALSE;
     }
     return self;
 }
