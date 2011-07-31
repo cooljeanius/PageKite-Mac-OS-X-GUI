@@ -43,6 +43,17 @@
     return FALSE;
 }
 
++ (void)forceFront
+{
+    // force us to be front process if we run in background
+	// This is so that apps that are set to run in the background will still have their
+	// window come to the front.  It is to my knowledge the only way to make an
+	// application with app bundle property LSUIElement set to true come to the front
+	ProcessSerialNumber process;
+	GetCurrentProcess(&process);
+	SetFrontProcess(&process);
+}
+
 + (void)alert: (NSString *)message subText: (NSString *)subtext
 {
 	NSAlert *alert = [[NSAlert alloc] init];

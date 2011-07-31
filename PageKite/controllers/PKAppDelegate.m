@@ -29,8 +29,6 @@
     self = [super init];
     if (self) 
     {
-        taskController = [[PKTaskController alloc] init];
-        [taskController setDelegate: self];
     }
     return self;
 }
@@ -60,7 +58,7 @@
     }
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void)applicationDidFinishLaunching: (NSNotification *)aNotification
 {
     // create status item
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength] retain];
@@ -87,7 +85,7 @@
         [taskController startPageKite];
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification
+- (void)applicationWillTerminate: (NSNotification *)aNotification
 {
     [taskController stopPageKite];
 }
@@ -123,22 +121,20 @@
 #pragma mark -
 #pragma mark Task delegate methods
 
-- (void)taskRunningChanged: (int)status;
+- (void)taskRunningChanged;
 {
-    NSLog(@"Task running changed");
     [self updateInterface];
 }
 
-- (void)taskConnectedChanged: (int)status;
+- (void)taskConnectedChanged;
 {
-    NSLog(@"Task connected changed");
     [self updateInterface];
 }
 
 #pragma mark -
 #pragma mark Menu
 
-- (void)menuWillOpen:(NSMenu *)menu
+- (void)menuWillOpen: (NSMenu *)menu
 {
     [self updateInterface];
 }

@@ -32,7 +32,7 @@
     IBOutlet id         menu;
     
     NSStatusItem        *statusItem;
-    PKTaskController    *taskController;
+    IBOutlet id         taskController;
 
     NSImage             *disabledIcon;
     NSImage             *enabledIcon;    

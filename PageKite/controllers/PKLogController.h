@@ -7,6 +7,7 @@
 //
 
 #import "PKTaskController.h"
+#import "STUtil.h"
 
 @interface PKLogController : NSObject <PKTaskLogDelegate>
 {
@@ -15,9 +16,10 @@
     IBOutlet id     runningTextField;
     IBOutlet id     connectedTextField;
     IBOutlet id     logTextView;
+    IBOutlet id     taskController;
 }
+-(IBAction)showLogWindow: (id)sender;
 -(void)updateInterface;
 -(void)clearLog;
--(void)appendToLog: (NSString *)string;
 -(void)setLog: (NSString *)string;
 @end

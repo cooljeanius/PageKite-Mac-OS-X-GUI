@@ -80,7 +80,7 @@
 - (void)setRunning: (BOOL)r
 {
     running = r;
-    [delegate taskStatusChanged];
+    [delegate taskRunningChanged];
 }
 
 #pragma mark -
@@ -94,7 +94,7 @@
 - (void)setConnected: (BOOL)r
 {
     connected = r;
-    [delegate taskStatusChanged];
+    [delegate taskConnectedChanged];
 }
 
 @end

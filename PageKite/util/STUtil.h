@@ -29,6 +29,7 @@
 	
 }
 + (BOOL)runningSnowLeopardOrLater;
++ (void)forceFront;
 + (void)alert: (NSString *)message subText: (NSString *)subtext;
 + (void)fatalAlert: (NSString *)message subText: (NSString *)subtext;
 + (void)sheetAlert: (NSString *)message subText: (NSString *)subtext forWindow: (NSWindow *)window;

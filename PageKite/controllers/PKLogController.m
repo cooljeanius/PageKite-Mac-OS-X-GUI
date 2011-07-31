@@ -10,24 +10,47 @@
 
 @implementation PKLogController
 
--(void)updateInterface
+- (IBAction)showLogWindow: (id)sender
+{
+    [STUtil forceFront];
+    [window makeKeyAndOrderFront: self];
+}
+
+- (void)updateInterface
 {
     
 }
 
--(void)clearLog
+- (void)clearLog
 {
     [logTextView setString: @""];
 }
 
--(void)appendToLog: (NSString *)string
+- (void)setLog: (NSString *)string
+{
+    [logTextView setString: string];
+}
+
+- (void)appendToLog: (NSString *)string
 {
     
 }
 
--(void)setLog: (NSString *)string
+-(void)taskOutputReceived: (NSString *)string
 {
-    [logTextView setString: string];
+    [self appendToLog: string];
 }
+
+- (void)taskRunningChanged
+{
+    NSString *buttonTitle = [taskController running] ? @"Stop PageKite" : @"Start PageKite";
+    [launchButton setTitle: buttonTitle];
+}
+
+- (void)taskConnectedChanged
+{
+    
+}
+
 
 @end
