@@ -45,11 +45,14 @@
 {
     NSString *buttonTitle = [taskController running] ? @"Stop PageKite" : @"Start PageKite";
     [launchButton setTitle: buttonTitle];
+    NSString *runningStr = [taskController running] ? @"YES" : @"NO";
+    [runningTextField setString: runningStr];
 }
 
 - (void)taskConnectedChanged
 {
-    
+    NSString *connectedStr = [taskController connected] ? @"YES" : @"NO";
+    [connectedTextField setString: connectedStr];
 }
 
 

@@ -93,19 +93,6 @@
 #pragma mark -
 #pragma mark PageKite control
 
-- (IBAction)togglePageKite: (id)sender
-{
-    if ([taskController running])
-    {
-        [taskController stopPageKite];
-    }
-    else
-    {
-        [taskController startPageKite];
-    }
-    [self updateInterface];
-}
-
 - (void)updateInterface
 {
     NSString *runningStr = [taskController running] ? @"PageKit is running" : @"PageKit is not running";

@@ -35,9 +35,11 @@
     BOOL                running;
     BOOL                connected;
     NSTask              *pkTask;
-    id                  delegate;
+    id                  taskDelegate;
+    id                  logDelegate;
 }
-@property (readwrite, assign) id delegate;
+@property (readwrite, assign) id taskDelegate;
+@property (readwrite, assign) id logDelegate;
 
 - (void)startPageKite;
 - (void)stopPageKite;

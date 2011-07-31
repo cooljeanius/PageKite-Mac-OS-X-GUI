@@ -21,7 +21,7 @@
 #import "PKTaskController.h"
 
 @implementation PKTaskController
-@synthesize delegate;
+@synthesize taskDelegate, logDelegate;
 
 - (id)init
 {
@@ -36,6 +36,15 @@
 
 #pragma mark -
 #pragma Start/stop PageKite task
+
+- (IBAction)togglePageKite: (id)sender
+{
+    if (running)
+        [self stopPageKite];
+    else
+        [self startPageKite];
+}
+
 
 - (void)startPageKite
 {
@@ -80,7 +89,8 @@
 - (void)setRunning: (BOOL)r
 {
     running = r;
-    [delegate taskRunningChanged];
+    [taskDelegate taskRunningChanged];
+    [logDelegate taskRunningChanged];
 }
 
 #pragma mark -
@@ -94,7 +104,8 @@
 - (void)setConnected: (BOOL)r
 {
     connected = r;
-    [delegate taskConnectedChanged];
+    [taskDelegate taskConnectedChanged];
+    [logDelegate taskConnectedChanged];
 }
 
 @end
