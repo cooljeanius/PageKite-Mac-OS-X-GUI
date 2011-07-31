@@ -26,6 +26,7 @@
 @interface PKTaskController : NSObject
 {
     BOOL                running;
+    BOOL                connected;
     NSTask              *pkTask;
     id                  delegate;
 }
@@ -33,5 +34,10 @@
 
 - (void)startPageKite;
 - (void)stopPageKite;
+
+- (BOOL)running;
+- (void)setRunning: (BOOL)r;
+- (BOOL)connected;
+- (void)setConnected: (BOOL)r;
 
 @end

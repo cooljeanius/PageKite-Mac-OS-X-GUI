@@ -30,7 +30,6 @@
         taskController = [[PKTaskController alloc] init];
         [taskController setDelegate: self];
     }
-    
     return self;
 }
 
@@ -119,7 +118,7 @@
     [statusItem setImage: icon];
 }
 
-- (void)taskStatusChanged
+- (void)taskStatusChanged: (int)status;
 {
     NSLog(@"Task status changed");
     [self updateInterface];

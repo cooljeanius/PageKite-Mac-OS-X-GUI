@@ -30,7 +30,6 @@
     {
         running = FALSE;
     }
-    
     return self;
 }
 
@@ -46,7 +45,6 @@
 											 selector: @selector(pageKiteEnded:)
 												 name: NSTaskDidTerminateNotification
 											   object: NULL];
-    
     pkTask = [[NSTask alloc] init];
     
     NSString *pkPath = [[NSBundle mainBundle] pathForResource: @"pagekite.py" ofType: nil]; 
@@ -55,23 +53,19 @@
     [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
     [pkTask launch];
     
-    running = TRUE;
-    [delegate taskStatusChanged];
+    [self setRunning: TRUE];
 }
 
 - (void)stopPageKite
 {
     [pkTask terminate];
-    [pkTask release];
-    running = FALSE;
 }
 
 - (void)pageKiteEnded: (NSNotification *)aNotification
 {
     NSLog(@"PageKite task terminated");
-    running = FALSE;
+    [self setRunning: FALSE];
     [[NSNotificationCenter defaultCenter] removeObserver: self];
-    
 }
 
 #pragma mark -
@@ -85,6 +79,20 @@
 - (void)setRunning: (BOOL)r
 {
     running = r;
+    [delegate taskStatusChanged];
+}
+
+#pragma mark -
+#pragma Connected
+
+- (BOOL)connected
+{
+    return connected;
+}
+
+- (void)setConnected: (BOOL)r
+{
+    connected = r;
     [delegate taskStatusChanged];
 }
 
