@@ -151,7 +151,7 @@
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{400, 300}</string>
 				<object class="NSView" key="NSWindowView" id="719327556">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -269,7 +269,6 @@
 							<int key="NSvFlags">289</int>
 							<string key="NSFrame">{{490, 12}, {76, 32}}</string>
 							<reference key="NSSuperview" ref="719327556"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:161</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="435797552">
@@ -325,7 +324,7 @@
 											<int key="NSvFlags">2322</int>
 											<string key="NSFrameSize">{538, 14}</string>
 											<reference key="NSSuperview" ref="57931379"/>
-											<reference key="NSNextKeyView" ref="553447692"/>
+											<reference key="NSNextKeyView" ref="581008039"/>
 											<string key="NSReuseIdentifierKey">_NS:3760</string>
 											<object class="NSTextContainer" key="NSTextContainer" id="1024978224">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -471,7 +470,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							</object>
 							<string key="NSFrame">{{20, 60}, {540, 232}}</string>
 							<reference key="NSSuperview" ref="719327556"/>
-							<reference key="NSNextKeyView" ref="581008039"/>
+							<reference key="NSNextKeyView" ref="57931379"/>
 							<string key="NSReuseIdentifierKey">_NS:148</string>
 							<int key="NSsFlags">154162</int>
 							<reference key="NSVScroller" ref="553447692"/>
@@ -620,7 +619,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						</object>
 					</object>
 					<string key="NSFrameSize">{580, 362}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="509795054"/>
 					<string key="NSReuseIdentifierKey">_NS:2818</string>
 				</object>
@@ -652,14 +650,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="destination" ref="202744899"/>
 					</object>
 					<int key="connectionID">543</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">togglePageKite:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="642556655"/>
-					</object>
-					<int key="connectionID">545</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -876,6 +866,14 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="destination" ref="976324537"/>
 					</object>
 					<int key="connectionID">812</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">togglePageKite:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="642556655"/>
+					</object>
+					<int key="connectionID">813</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1370,7 +1368,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">812</int>
+			<int key="maxID">813</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

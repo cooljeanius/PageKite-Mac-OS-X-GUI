@@ -98,11 +98,11 @@
 {
     if ([taskController running])
     {
-        [taskController startPageKite];
+        [taskController stopPageKite];
     }
     else
     {
-        [taskController stopPageKite];
+        [taskController startPageKite];
     }
     [self updateInterface];
 }
@@ -121,6 +121,7 @@
 
 - (void)taskStatusChanged
 {
+    NSLog(@"Task status changed");
     [self updateInterface];
 }
 

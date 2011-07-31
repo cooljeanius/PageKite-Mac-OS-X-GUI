@@ -29,7 +29,6 @@
     NSTask              *pkTask;
     id                  delegate;
 }
-@property (readwrite, assign) BOOL running;
 @property (readwrite, assign) id delegate;
 
 - (void)startPageKite;

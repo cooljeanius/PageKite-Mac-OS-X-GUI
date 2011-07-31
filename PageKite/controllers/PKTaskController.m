@@ -21,21 +21,26 @@
 #import "PKTaskController.h"
 
 @implementation PKTaskController
-@synthesize running, delegate;
+@synthesize delegate;
 
-//- (id)init
-//{
-//    self = [super init];
-//    if (self) {
-//        // Initialization code here.
-//    }
-//    
-//    return self;
-//}
+- (id)init
+{
+    self = [super init];
+    if (self) 
+    {
+        running = FALSE;
+    }
+    
+    return self;
+}
 
+#pragma mark -
+#pragma Start/stop PageKite task
 
 - (void)startPageKite
 {
+    NSLog(@"Launching PageKite task");
+    
     // Register to receive notifications on task termination
 	[[NSNotificationCenter defaultCenter] addObserver: self
 											 selector: @selector(pageKiteEnded:)
@@ -50,9 +55,7 @@
     [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
     [pkTask launch];
     
-    NSLog(@"Launched PageKite task");
     running = TRUE;
-
     [delegate taskStatusChanged];
 }
 
@@ -65,9 +68,24 @@
 
 - (void)pageKiteEnded: (NSNotification *)aNotification
 {
-    NSLog(@"PageKite terminated");
-    [delegate taskStatusChanged];
+    NSLog(@"PageKite task terminated");
+    running = FALSE;
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+    
 }
 
+#pragma mark -
+#pragma Running
+
+- (BOOL)running
+{
+    return running;
+}
+
+- (void)setRunning: (BOOL)r
+{
+    running = r;
+    [delegate taskStatusChanged];
+}
 
 @end
