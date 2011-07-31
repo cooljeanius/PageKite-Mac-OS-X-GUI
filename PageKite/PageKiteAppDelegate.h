@@ -7,10 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "STAppLoginLaunch.h"
-
-#define PAGEKITE_RC_FILE_PATH [@"~/.pagekite.rc" stringByExpandingTildeInPath]
-
+#import "Common.h"
+#import "STAppOnLogin.h"
+#import "RCTextView.h"
 
 @interface PageKiteAppDelegate : NSObject
 {
@@ -18,9 +17,6 @@
     IBOutlet id     runningMenuItem;
     IBOutlet id     toggleMenuItem;
     IBOutlet id     menu;
-    IBOutlet id     window;
-    IBOutlet id     configTextField;
-    IBOutlet id     restartCheckbox;
     
     BOOL            running;
     NSStatusItem    *statusItem;
@@ -31,12 +27,8 @@
     
     NSTask          *pkTask;
 }
-- (IBAction)showPreferences: (id)sender;
 
 - (IBAction)togglePageKite: (id)sender;
-
-- (IBAction)applyPrefs: (id)sender;
-
 
 - (void)updateInterface;
 

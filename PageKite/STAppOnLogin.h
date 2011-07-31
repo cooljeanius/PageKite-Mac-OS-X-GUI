@@ -9,8 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface STAppLoginLaunch : NSObject 
+@interface STAppOnLogin : NSObject 
 {
 
 }
++ (BOOL)addAppToLoginItems;
+
 @end

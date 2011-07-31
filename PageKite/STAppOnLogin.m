@@ -6,10 +6,10 @@
 //  Copyright 2010 Sveinbjorn Thordarson. All rights reserved.
 //
 
-#import "STAppLoginLaunch.h"
+#import "STAppOnLogin.h"
 
 
-@implementation STAppLoginLaunch
+@implementation STAppOnLogin
 
 + (NSString *)appPath
 {
@@ -18,7 +18,6 @@
 
 + (BOOL)addAppToLoginItems
 {
-	
 	// Reference to shared file list
 	LSSharedFileListRef theLoginItemsRefs = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
 	
