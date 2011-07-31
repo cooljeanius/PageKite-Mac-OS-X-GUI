@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40D1A1713E5E35900F82D17 /* PKLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40D1A1613E5E35900F82D17 /* PKLogController.m */; };
 		F4456C0F13E348A70063B9C9 /* pagekite.py in Resources */ = {isa = PBXBuildFile; fileRef = F4456C0D13E348A70063B9C9 /* pagekite.py */; };
 		F4456C1013E348A70063B9C9 /* pagekite.rc in Resources */ = {isa = PBXBuildFile; fileRef = F4456C0E13E348A70063B9C9 /* pagekite.rc */; };
 		F4BD6E0C13E5C4A000ABB348 /* pagekite-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0913E5C4A000ABB348 /* pagekite-disabled.png */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F40D1A1513E5E35900F82D17 /* PKLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKLogController.h; sourceTree = "<group>"; };
+		F40D1A1613E5E35900F82D17 /* PKLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKLogController.m; sourceTree = "<group>"; };
 		F4456C0D13E348A70063B9C9 /* pagekite.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = pagekite.py; sourceTree = "<group>"; };
 		F4456C0E13E348A70063B9C9 /* pagekite.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pagekite.rc; sourceTree = "<group>"; };
 		F4BD6E0913E5C4A000ABB348 /* pagekite-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagekite-disabled.png"; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 				F4BD6E2713E5C68000ABB348 /* PKTaskController.m */,
 				F4BD6E1313E5C4CD00ABB348 /* PKPrefsController.h */,
 				F4BD6E2913E5C6C600ABB348 /* PKPrefsController.m */,
+				F40D1A1513E5E35900F82D17 /* PKLogController.h */,
+				F40D1A1613E5E35900F82D17 /* PKLogController.m */,
 			);
 			name = Controllers;
 			path = controllers;
@@ -256,6 +261,7 @@
 				F4BD6E2513E5C56C00ABB348 /* RCTextView.m in Sources */,
 				F4BD6E2813E5C68000ABB348 /* PKTaskController.m in Sources */,
 				F4BD6E2A13E5C6C600ABB348 /* PKPrefsController.m in Sources */,
+				F40D1A1713E5E35900F82D17 /* PKLogController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

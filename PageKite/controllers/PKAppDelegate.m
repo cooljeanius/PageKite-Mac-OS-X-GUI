@@ -22,6 +22,8 @@
 
 @implementation PKAppDelegate
 
+#pragma mark -
+
 - (id)init
 {
     self = [super init];
@@ -39,7 +41,7 @@
 }
 
 #pragma mark -
-#pragma App Delegate functions
+#pragma mark App Delegate functions
 
 + (void)initialize 
 { 
@@ -118,9 +120,18 @@
     [statusItem setImage: icon];
 }
 
-- (void)taskStatusChanged: (int)status;
+#pragma mark -
+#pragma mark Task delegate methods
+
+- (void)taskRunningChanged: (int)status;
 {
-    NSLog(@"Task status changed");
+    NSLog(@"Task running changed");
+    [self updateInterface];
+}
+
+- (void)taskConnectedChanged: (int)status;
+{
+    NSLog(@"Task connected changed");
     [self updateInterface];
 }
 

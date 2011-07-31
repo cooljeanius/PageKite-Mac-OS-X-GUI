@@ -19,7 +19,14 @@
 //
 
 @protocol PKTaskDelegate <NSObject>
-- (void)taskStatusChanged;
+- (void)taskRunningChanged;
+- (void)taskConnectedChanged;
+@end
+
+@protocol PKTaskLogDelegate <NSObject>
+- (void)taskRunningChanged;
+- (void)taskConnectedChanged;
+- (void)taskOutputReceived: (NSString *)string;
 @end
 
 
