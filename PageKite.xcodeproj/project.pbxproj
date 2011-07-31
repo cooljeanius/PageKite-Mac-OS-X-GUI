@@ -44,6 +44,8 @@
 		F4BD6E2613E5C68000ABB348 /* PKTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTaskController.h; sourceTree = "<group>"; };
 		F4BD6E2713E5C68000ABB348 /* PKTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTaskController.m; sourceTree = "<group>"; };
 		F4BD6E2913E5C6C600ABB348 /* PKPrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPrefsController.m; sourceTree = "<group>"; };
+		F4BD6E2B13E5CDBA00ABB348 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		F4BD6E2C13E5CDBA00ABB348 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
 		F4E8560B13E33EF000D6FBAC /* PageKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E8560F13E33EF000D6FBAC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F4E8561213E33EF000D6FBAC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -165,6 +167,8 @@
 		F4E8561613E33EF000D6FBAC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F4BD6E2B13E5CDBA00ABB348 /* LICENSE */,
+				F4BD6E2C13E5CDBA00ABB348 /* README */,
 				F4E8562413E33EF100D6FBAC /* MainMenu.xib */,
 				F4456C0C13E348A70063B9C9 /* pagekite */,
 				F4BD6E0813E5C4A000ABB348 /* resources */,
