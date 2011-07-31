@@ -21,7 +21,10 @@
     [window makeKeyAndOrderFront: self];
 }
 
-- (void)clearLog
+#pragma mark -
+#pragma mark Manipulate log contents
+
+- (IBAction)clearLog: (id)sender;
 {
     [logTextView setString: @""];
 }
@@ -31,19 +34,46 @@
     [logTextView setString: string];
 }
 
-- (void)appendToLog: (NSString *)string
+- (void)appendToLog: (NSAttributedString *)string
 {
     // append the ouput to the text storage in the text field
-    // this is the fastest way
+    // this is by far the fastest way
 	NSTextStorage *text = [logTextView textStorage];
-	[text replaceCharactersInRange: NSMakeRange([text length], 0) withString: string];
+	[text replaceCharactersInRange: NSMakeRange([text length], 0) withAttributedString: string];
     [logTextView setFont: [NSFont fontWithName: @"Monaco" size: 10.0]];
+    
+    // scroll to bottom
     [logTextView scrollRangeToVisible: NSMakeRange([text length], 0)];
 }
 
-- (void)taskOutputReceived: (NSString *)string
+#pragma mark -
+#pragma mark Respond to task notifications
+
+- (void)taskOutputSTDOUTReceived: (NSString *)string;
 {
-    [self appendToLog: string];
+    NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys: 
+                          [NSColor blackColor],             NSForegroundColorAttributeName,
+                          [NSFont menuFontOfSize: 10.0f],    NSFontAttributeName,
+                          nil];
+    
+    NSAttributedString *attrStr = [[[NSAttributedString alloc] initWithString: string attributes: attr] autorelease];
+    
+    NSLog(@"Received stdout");
+    [self appendToLog: attrStr];
+}
+
+- (void)taskOutputSTDERRReceived: (NSString *)string;
+{
+    // if stderr, we make the string red
+    NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys: 
+                          [NSColor redColor],               NSForegroundColorAttributeName,
+                          [NSFont menuFontOfSize: 10.0f],    NSFontAttributeName,
+                          nil];
+    
+    NSAttributedString *attrStr = [[[NSAttributedString alloc] initWithString: string attributes: attr] autorelease];
+    
+    NSLog(@"Received stderr");
+    [self appendToLog: attrStr];
 }
 
 - (void)taskRunningChanged

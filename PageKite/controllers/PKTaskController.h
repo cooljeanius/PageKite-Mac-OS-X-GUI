@@ -26,7 +26,9 @@
 @protocol PKTaskLogDelegate <NSObject>
 - (void)taskRunningChanged;
 - (void)taskConnectedChanged;
-- (void)taskOutputReceived: (NSString *)string;
+- (void)taskOutputSTDOUTReceived: (NSString *)string;
+- (void)taskOutputSTDERRReceived: (NSString *)string;
+
 @end
 
 
@@ -36,8 +38,8 @@
     BOOL                connected;
     
     NSTask              *pkTask;
-    NSPipe              *outputPipe;
-	NSFileHandle        *readHandle;
+    NSPipe              *stdoutPipe, *stderrPipe;
+	NSFileHandle        *stdoutReadHandle, *stderrReadHandle;
     
     IBOutlet id         taskDelegate;
     IBOutlet id         logDelegate;

@@ -60,16 +60,29 @@
     [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
     
     // Register to receive notification on task output to stdout and stderr
-    outputPipe = [NSPipe pipe];
-    [pkTask setStandardOutput: outputPipe];
-    [pkTask setStandardError: outputPipe];
-    readHandle = [outputPipe fileHandleForReading];
-    [[NSNotificationCenter defaultCenter] addObserver: self 
-                                             selector: @selector(receivedTaskOutput:) 
-                                                 name: NSFileHandleReadCompletionNotification 
-                                               object: readHandle];
-    [readHandle readInBackgroundAndNotify];
     
+        //stdout
+        stdoutPipe = [NSPipe pipe];
+        [pkTask setStandardOutput: stdoutPipe];
+       
+        stdoutReadHandle = [stdoutPipe fileHandleForReading];
+        [[NSNotificationCenter defaultCenter] addObserver: self 
+                                                 selector: @selector(receivedTaskOutput:) 
+                                                     name: NSFileHandleReadCompletionNotification 
+                                                   object: stdoutReadHandle];
+        [stdoutReadHandle readInBackgroundAndNotify];
+        
+        // stderrr
+        stderrPipe = [NSPipe pipe];
+        [pkTask setStandardError: stderrPipe];
+        
+        stderrReadHandle = [stderrPipe fileHandleForReading];
+        [[NSNotificationCenter defaultCenter] addObserver: self 
+                                                 selector: @selector(receivedTaskOutput:) 
+                                                     name: NSFileHandleReadCompletionNotification 
+                                                   object: stderrReadHandle];
+        [stderrReadHandle readInBackgroundAndNotify];
+        
     // Register to receive notifications on task termination
 	[[NSNotificationCenter defaultCenter] addObserver: self
 											 selector: @selector(taskEnded:)
@@ -112,11 +125,23 @@
 	{
 		// we decode the script output as UTF8 string
         NSString *outputString = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+        
         if (outputString)
         {
-            // send log delegate the output string
-            [logDelegate taskOutputReceived: outputString];
-            [outputString release];
+            NSLog(outputString);
+            // send output string to log delegate
+            if ([aNotification object] == stderrReadHandle)
+            {
+                [logDelegate taskOutputSTDERRReceived: outputString];
+                [outputString writeToFile: @"/dev/stdout" atomically: YES encoding: NSUTF8StringEncoding error: nil];
+            }
+            else
+            {
+                [logDelegate taskOutputSTDOUTReceived: outputString];
+                [outputString writeToFile: @"/dev/stderr" atomically: YES encoding: NSUTF8StringEncoding error: nil];
+            }
+            
+            //[outputString release];
         }
         
 		// we schedule the file handle to go and read more data in the background again.
