@@ -79,7 +79,7 @@
 	[alert release];
 }
 
-- (BOOL) proceedConfirmation: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action
+- (BOOL)proceedConfirmation: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action
 {
     BOOL confirmed = FALSE;
     

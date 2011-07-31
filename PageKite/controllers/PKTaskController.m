@@ -18,19 +18,49 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-
 #import "PKTaskController.h"
 
 @implementation PKTaskController
+@synthesize running;
 
-- (id)init
+//- (id)init
+//{
+//    self = [super init];
+//    if (self) {
+//        // Initialization code here.
+//    }
+//    
+//    return self;
+//}
+
+
+- (void)enablePageKite
 {
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
+    // Register to receive notifications on task termination
+	[[NSNotificationCenter defaultCenter] addObserver: self
+											 selector: @selector(pageKiteEnded:)
+												 name: NSTaskDidTerminateNotification
+											   object: NULL];
     
-    return self;
+    pkTask = [[NSTask alloc] init];
+    
+    NSString *pkPath = [[NSBundle mainBundle] pathForResource: @"pagekite.py" ofType: nil]; 
+    
+    [pkTask setLaunchPath: @"/usr/bin/python"];
+    [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
+    [pkTask launch];
 }
+
+- (void)disablePageKite
+{
+    [pkTask terminate];
+    [pkTask release];
+}
+
+- (void)pageKiteEnded: (NSNotification *)aNotification
+{
+    NSLog(@"PageKite terminated");
+}
+
 
 @end

@@ -18,37 +18,26 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-
 #import <Cocoa/Cocoa.h>
 #import "Common.h"
 #import "STAppOnLogin.h"
 #import "RCTextView.h"
+#import "PKTaskController.h"
 
 @interface PKAppDelegate : NSObject
 {
     // interface builder outlets
-    IBOutlet id     runningMenuItem;
-    IBOutlet id     toggleMenuItem;
-    IBOutlet id     menu;
+    IBOutlet id         runningMenuItem;
+    IBOutlet id         toggleMenuItem;
+    IBOutlet id         menu;
     
-    BOOL            running;
-    NSStatusItem    *statusItem;
-    
+    NSStatusItem        *statusItem;
+    PKTaskController    *taskController;
 
-    NSImage         *disabledIcon;
-    NSImage         *enabledIcon;
-    
-    NSTask          *pkTask;
+    NSImage             *disabledIcon;
+    NSImage             *enabledIcon;    
 }
 
 - (IBAction)togglePageKite: (id)sender;
-
 - (void)updateInterface;
-
-- (void)enablePageKite;
-- (void)disablePageKite;
-
-- (void)alert: (NSString *)message subText: (NSString *)subtext;
-- (BOOL) proceedConfirmation: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action;
-
 @end

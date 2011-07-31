@@ -18,7 +18,11 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-
 @interface PKTaskController : NSObject
+{
+    BOOL                running;
+    NSTask              *pkTask;
+}
+@property (readwrite, assign) BOOL running;
 
 @end

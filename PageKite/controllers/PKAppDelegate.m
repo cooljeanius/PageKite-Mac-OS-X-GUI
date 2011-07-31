@@ -18,10 +18,23 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-
 #import "PKAppDelegate.h"
 
 @implementation PKAppDelegate
+
+- (id)init
+{
+    self = [super init];
+    if (self) 
+    {
+        taskController = [[PKTaskController alloc] init];
+    }
+    
+    return self;
+}
+
+#pragma mark -
+#pragma App Delegate functions
 
 + (void)initialize 
 { 
@@ -42,8 +55,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    running = FALSE;
-    
     // create status item
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength] retain];
     
@@ -69,74 +80,40 @@
         [self enablePageKite];
 }
 
+#pragma mark -
+#pragma mark PageKite control
 
 - (IBAction)togglePageKite: (id)sender
 {
-    if (running)
+    if ([taskController running])
     {
-        [self disablePageKite];
+        [taskController disablePageKite];
     }
     else
     {
-        [self enablePageKite];
+        [taskController enablePageKite];
     }
-    running = !running;
     [self updateInterface];
 }
 
 - (void)updateInterface
 {
-    NSString *runningStr = running ? @"PageKit is running" : @"PageKit is not running";
+    NSString *runningStr = [taskController running] ? @"PageKit is running" : @"PageKit is not running";
     [runningMenuItem setTitle: runningStr];
     
-    NSString *enableDisable = running ? @"Turn PageKite Off" : @"Turn PageKite On";
+    NSString *enableDisable = [taskController running] ? @"Turn PageKite Off" : @"Turn PageKite On";
     [toggleMenuItem setTitle: enableDisable];
     
-    NSImage *icon = running ? enabledIcon : disabledIcon;
+    NSImage *icon = [taskController running] ? enabledIcon : disabledIcon;
     [statusItem setImage: icon];
 }
 
-- (void)enablePageKite
-{
-    // Register to receive notifications on task termination
-	[[NSNotificationCenter defaultCenter] addObserver: self
-											 selector: @selector(pageKiteEnded:)
-												 name: NSTaskDidTerminateNotification
-											   object: NULL];
-        
-    pkTask = [[NSTask alloc] init];
-    
-    NSString *pkPath = [[NSBundle mainBundle] pathForResource: @"pagekite.py" ofType: nil]; 
-    
-    [pkTask setLaunchPath: @"/usr/bin/python"];
-    [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
-    [pkTask launch];
-}
+#pragma mark -
+#pragma mark Menu
 
-- (void)disablePageKite
+- (void)menuWillOpen:(NSMenu *)menu
 {
-    [pkTask terminate];
-    [pkTask release];
-}
-
-- (void)pageKiteEnded: (NSNotification *)aNotification
-{
-    
-}
-
-#pragma -
-#pragma Utility functions
-
-- (void)alert: (NSString *)message subText: (NSString *)subtext
-{
-	NSAlert *alert = [[NSAlert alloc] init];
-	[alert addButtonWithTitle:@"OK"];
-	[alert setMessageText: message];
-	[alert setInformativeText: subtext];
-	[alert setAlertStyle:NSWarningAlertStyle];
-	
-	[alert runModal]; 
-	[alert release];
+    [self updateInterface];
 }
 
 @end

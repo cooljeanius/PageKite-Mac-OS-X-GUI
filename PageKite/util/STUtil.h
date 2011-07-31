@@ -30,10 +30,5 @@
 }
 + (void)alert: (NSString *)message subText: (NSString *)subtext;
 + (void)fatalAlert: (NSString *)message subText: (NSString *)subtext;
-+ (BOOL) proceedWarning: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action;
-+ (void)sheetAlert: (NSString *)message subText: (NSString *)subtext forWindow: (NSWindow *)window;
-+ (UInt64) fileOrFolderSize: (NSString *)path;
-+ (NSString *) sizeAsHumanReadable: (UInt64)size;
-+ (NSString *) fileOrFolderSizeAsHumanReadable: (NSString *)path;
-+ (NSArray *)imageFileSuffixes;
+- (BOOL)proceedConfirmation: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action;
 @end
