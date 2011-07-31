@@ -6,12 +6,13 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "PageKitePrefsController.h"
+#import "PKPrefsController.h"
 
-@implementation PageKitePrefsController
+@implementation PKPrefsController
 
 - (IBAction)showPreferences: (id)sender
 {
+    // Read config file
     NSString *rcFileContents = [NSString stringWithContentsOfFile: PAGEKITE_RC_FILE_PATH usedEncoding: nil error: nil];
     
     if (rcFileContents)
@@ -28,6 +29,14 @@
 	GetCurrentProcess(&process);
 	SetFrontProcess(&process);
     
+    // update controls
+    [startOnLoginCheckbox setIntValue: [[NSUserDefaults standardUserDefaults] boolForKey: @"StartOnLogin"]];
+    [connectOnLoginCheckbox setIntValue: [[NSUserDefaults standardUserDefaults] boolForKey: @"ConnectOnLogin"]];
+    
+    // show restore defaults button if we have a default config saved
+    if ([[NSUserDefaults standardUserDefaults] objectForKey: @"DefaultConfig"] != nil)
+        [restoreDefaultsButton setEnabled: YES]; 
+    
     //show window
     [window makeKeyAndOrderFront: self];
 }
@@ -43,27 +52,32 @@
 - (IBAction)applyPrefs:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue: [NSNumber numberWithBool: YES] forKey: @"StartOnLogin"];
-    [defaults setValue: [NSNumber numberWithBool: YES] forKey: @"ConnectOnLogin"];
     
+    // set control states
+    [defaults setObject: [NSNumber numberWithBool: [startOnLoginCheckbox intValue]] forKey: @"StartOnLogin"];
+    [defaults setObject: [NSNumber numberWithBool: [connectOnLoginCheckbox intValue]] forKey: @"ConnectOnLogin"];
     
     // If config string has changed, write it to disk and save into defaults
-    NSString *configFileStr = [[NSUserDefaults standardUserDefaults] objectForKey: @"ConfigFile"]; 
+    NSString *configFileStr = [defaults objectForKey: @"ConfigFile"]; 
     
     NSString *configStr = [configTextView string];
     if (![configStr isEqualToString: configFileStr])
     {
-        // set defaults
-        [[NSUserDefaults standardUserDefaults] setObject: configStr forKey: @"ConfigFile"];
+        // save a copy of config file to defaults
+        [defaults setObject: configStr forKey: @"ConfigFile"];
+        
         // write changed string to config file
         NSError* error = nil;
         [configStr writeToFile: PAGEKITE_RC_FILE_PATH atomically: YES encoding:NSUTF8StringEncoding error: &error];
         if (error)
         {
             NSLog(@"error = %@", [error description]);
-            [self alert: @"Error" subText: [NSString stringWithFormat: @"Error: %s", [error description]]];
+            [STUtil alert: @"Error" subText: [NSString stringWithFormat: @"Error: %s", [error description]]];
         }
     }
+    
+    // make sure they are saved to disk
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [window orderOut: self];
 }

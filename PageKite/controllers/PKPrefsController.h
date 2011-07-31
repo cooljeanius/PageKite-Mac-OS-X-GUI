@@ -7,14 +7,16 @@
 //
 
 #import "Common.h"
+#import "STUtil.h"
 
-@interface PageKitePrefsController : NSObject
+@interface PKPrefsController : NSObject
 {
     IBOutlet id     window;
     IBOutlet id     configTextView;
     IBOutlet id     restartCheckbox;
     IBOutlet id     startOnLoginCheckbox;
     IBOutlet id     connectOnLoginCheckbox;
+    IBOutlet id     restoreDefaultsButton;
 }
 - (IBAction)showPreferences: (id)sender;
 - (IBAction)applyPrefs: (id)sender;

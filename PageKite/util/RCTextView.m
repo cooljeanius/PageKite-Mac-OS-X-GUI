@@ -20,6 +20,9 @@
 {
     [self removeSyntaxColoring];
     
+    // default blue
+    [self setTextColor: [NSColor colorWithDeviceRed: 0 green: 0 blue: 0.5 alpha: 1] range: NSMakeRange(0, [[self string] length])];
+    
     NSScanner* scanner = [NSScanner scannerWithString: [self string]];
     NSInteger start = 0, end = 0;
     

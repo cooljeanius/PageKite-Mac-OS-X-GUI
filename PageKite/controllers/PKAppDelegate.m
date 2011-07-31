@@ -6,9 +6,9 @@
 //  Copyright 2011 PageKite. All rights reserved.
 //
 
-#import "PageKiteAppDelegate.h"
+#import "PKAppDelegate.h"
 
-@implementation PageKiteAppDelegate
+@implementation PKAppDelegate
 
 + (void)initialize 
 { 
@@ -19,8 +19,6 @@
     
     // register the dictionary of defaults
     [[NSUserDefaults standardUserDefaults] registerDefaults: defaultPrefs];
-    
-    [STAppOnLogin addAppToLoginItems];
     
     // user already has a pagekite rc file
     if ([[NSFileManager defaultManager] fileExistsAtPath: [PAGEKITE_RC_FILE_PATH stringByExpandingTildeInPath]])
@@ -33,10 +31,10 @@
 {
     running = FALSE;
     
-    // Create status item
+    // create status item
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength] retain];
     
-    // Create icons and set menu
+    // create icons and set menu
     disabledIcon = [NSImage imageNamed: @"pagekite-disabled.png"];	
     enabledIcon = [NSImage imageNamed: @"pagekite-enabled.png"];
     
@@ -46,6 +44,16 @@
 
     // enable it
 	[statusItem setEnabled: YES];
+    
+    // add to login items
+    if ([[NSUserDefaults standardUserDefaults] boolForKey: @"StartOnLogin"])
+        [STAppOnLogin addAppToLoginItems];
+    else
+        [STAppOnLogin removeAppFromLoginItems];
+
+    // connect if settings dictate thus
+    if ([[NSUserDefaults standardUserDefaults] boolForKey: @"ConnectOnLogin"])
+        [self enablePageKite];
 }
 
 

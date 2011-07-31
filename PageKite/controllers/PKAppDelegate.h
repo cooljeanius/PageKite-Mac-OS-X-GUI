@@ -11,7 +11,7 @@
 #import "STAppOnLogin.h"
 #import "RCTextView.h"
 
-@interface PageKiteAppDelegate : NSObject
+@interface PKAppDelegate : NSObject
 {
     // interface builder outlets
     IBOutlet id     runningMenuItem;
