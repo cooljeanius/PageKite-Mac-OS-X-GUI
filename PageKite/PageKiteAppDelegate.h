@@ -42,6 +42,8 @@
 
 - (void)enablePageKite;
 - (void)disablePageKite;
+
+- (void)alert: (NSString *)message subText: (NSString *)subtext;
 - (BOOL) proceedConfirmation: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action;
 
 @end

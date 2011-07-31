@@ -87,8 +87,16 @@
     NSString *configStr = [configTextField string];
     if (![configStr isEqualToString: configFileStr])
     {
+        // set defaults
         [[NSUserDefaults standardUserDefaults] setObject: configStr forKey: @"ConfigFile"];
-        [configStr writeToFile: PAGEKITE_RC_FILE_PATH atomically: YES encoding:NSUTF8StringEncoding error: nil];
+        // write changed string to config file
+        NSError* error = nil;
+        [configStr writeToFile: PAGEKITE_RC_FILE_PATH atomically: YES encoding:NSUTF8StringEncoding error: &error];
+        if (error)
+        {
+            NSLog(@"error = %@", [error description]);
+            [self alert: @"Error" subText: [NSString stringWithFormat: @"Error: %s", [error description]]];
+        }
     }
     
     [window orderOut: self];
@@ -155,6 +163,18 @@
 
 #pragma -
 #pragma Utility functions
+
+- (void)alert: (NSString *)message subText: (NSString *)subtext
+{
+	NSAlert *alert = [[NSAlert alloc] init];
+	[alert addButtonWithTitle:@"OK"];
+	[alert setMessageText: message];
+	[alert setInformativeText: subtext];
+	[alert setAlertStyle:NSWarningAlertStyle];
+	
+	[alert runModal]; 
+	[alert release];
+}
 
 - (BOOL) proceedConfirmation: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action
 {
