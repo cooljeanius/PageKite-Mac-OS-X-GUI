@@ -55,7 +55,7 @@
 
 - (IBAction)restoreDefaults:(id)sender
 {
-    if ([self proceedConfirmation: @"Restore defaults?" subText: @"This will overwrite any changes you may have made." withAction: @"Restore"])
+    if ([STUtil proceedConfirmation: @"Restore defaults?" subText: @"This will overwrite any changes you may have made." withAction: @"Restore"])
     {
         // do something
     }
@@ -96,8 +96,8 @@
 
 - (void)textDidChange:(NSNotification *)aNotification
 {
-    [restartCheckbox setHidden: (TRUE && TRUE)];
-    [configTextView updateSyntaxColoring];
+    //[restartCheckbox setHidden: (TRUE && TRUE)];
+    [(RCTextView *)configTextView updateSyntaxColoring];
 }
 
 

@@ -21,7 +21,7 @@
 #import "PKTaskController.h"
 
 @implementation PKTaskController
-@synthesize running;
+@synthesize running, delegate;
 
 //- (id)init
 //{
@@ -49,17 +49,22 @@
     [pkTask setLaunchPath: @"/usr/bin/python"];
     [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
     [pkTask launch];
+    NSLog(@"Launched PageKite task");
+    running = TRUE;
+    [delegate taskStatusChanged];
 }
 
 - (void)disablePageKite
 {
     [pkTask terminate];
     [pkTask release];
+    running = FALSE;
 }
 
 - (void)pageKiteEnded: (NSNotification *)aNotification
 {
     NSLog(@"PageKite terminated");
+    [delegate taskStatusChanged];
 }
 
 

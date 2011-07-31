@@ -28,5 +28,5 @@
 
 }
 + (BOOL)addAppToLoginItems;
-
++ (BOOL)removeAppFromLoginItems;
 @end

@@ -48,14 +48,14 @@
 	return YES;
 }
 
-- (BOOL)removeAppFromLoginItems
++ (BOOL)removeAppFromLoginItems
 {
 	//if ([self loginItemExistsWithLoginItemReference: 
 	
 	return YES;
 }
 
-- (NSArray *)getLoginItemsListArray
++ (NSArray *)getLoginItemsListArray
 {
 	// Some seed data
 	UInt32 seedValue;
@@ -69,7 +69,7 @@
 	return loginItemsArray;
 }
 
-- (BOOL)loginItemExistsWithLoginItemReference:(LSSharedFileListRef)theLoginItemsRefs forPath:(CFURLRef)thePath 
++ (BOOL)loginItemExistsWithLoginItemReference:(LSSharedFileListRef)theLoginItemsRefs forPath:(CFURLRef)thePath 
 {
 	BOOL exists = NO;  
 	UInt32 seedValue;

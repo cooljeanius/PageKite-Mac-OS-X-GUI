@@ -24,7 +24,7 @@
 #import "RCTextView.h"
 #import "PKTaskController.h"
 
-@interface PKAppDelegate : NSObject
+@interface PKAppDelegate : NSObject <PKTaskDelegate>
 {
     // interface builder outlets
     IBOutlet id         runningMenuItem;

@@ -20,6 +20,7 @@
 
 #import "Common.h"
 #import "STUtil.h"
+#import "RCTextView.h"
 
 @interface PKPrefsController : NSObject
 {

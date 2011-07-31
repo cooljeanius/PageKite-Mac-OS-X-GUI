@@ -18,11 +18,21 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+@protocol PKTaskDelegate <NSObject>
+- (void)taskStatusChanged;
+@end
+
+
 @interface PKTaskController : NSObject
 {
     BOOL                running;
     NSTask              *pkTask;
+    id                  delegate;
 }
 @property (readwrite, assign) BOOL running;
+@property (readwrite, assign) id delegate;
+
+- (void)enablePageKite;
+- (void)disablePageKite;
 
 @end

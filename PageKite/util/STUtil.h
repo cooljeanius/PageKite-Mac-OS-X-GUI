@@ -28,7 +28,9 @@
 {
 	
 }
++ (BOOL)runningSnowLeopardOrLater;
 + (void)alert: (NSString *)message subText: (NSString *)subtext;
 + (void)fatalAlert: (NSString *)message subText: (NSString *)subtext;
-- (BOOL)proceedConfirmation: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action;
++ (void)sheetAlert: (NSString *)message subText: (NSString *)subtext forWindow: (NSWindow *)window;
++ (BOOL)proceedConfirmation: (NSString *)message subText: (NSString *)subtext withAction: (NSString *)action;
 @end

@@ -28,9 +28,15 @@
     if (self) 
     {
         taskController = [[PKTaskController alloc] init];
+        [taskController setDelegate: self];
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    [taskController release];
 }
 
 #pragma mark -
@@ -77,7 +83,7 @@
 
     // connect if settings dictate thus
     if ([[NSUserDefaults standardUserDefaults] boolForKey: @"ConnectOnLogin"])
-        [self enablePageKite];
+        [taskController enablePageKite];
 }
 
 #pragma mark -
@@ -106,6 +112,11 @@
     
     NSImage *icon = [taskController running] ? enabledIcon : disabledIcon;
     [statusItem setImage: icon];
+}
+
+- (void)taskStatusChanged
+{
+    [self updateInterface];
 }
 
 #pragma mark -
