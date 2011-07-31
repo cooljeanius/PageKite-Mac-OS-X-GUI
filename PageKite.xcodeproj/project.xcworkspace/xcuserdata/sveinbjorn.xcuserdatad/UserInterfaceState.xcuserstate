@@ -587,7 +587,7 @@
 				<integer>61</integer>
 			</dict>
 		</dict>
-		<string>LICENSE</string>
+		<string>README</string>
 		<dict>
 			<key>$classes</key>
 			<array>
@@ -661,7 +661,7 @@
 				<integer>72</integer>
 			</dict>
 			<key>NS.string</key>
-			<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/LICENSE</string>
+			<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/README</string>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -740,9 +740,9 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>333827952.55103302</real>
-		<string>{0, 1337}</string>
-		<string>{435, 0}</string>
+		<real>333828046.70602798</real>
+		<string>{0, 361}</string>
+		<string>{361, 0}</string>
 		<dict>
 			<key>$classes</key>
 			<array>
@@ -770,7 +770,7 @@
 				<integer>86</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/LICENSE</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/README</string>
 		<dict>
 			<key>$classes</key>
 			<array>
@@ -1452,7 +1452,7 @@
 			<key>$classname</key>
 			<string>IDEWorkspaceTabControllerLayoutTree</string>
 		</dict>
-		<string>LICENSE</string>
+		<string>README</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -11079,9 +11079,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>333827948.63880199</real>
-		<string>{0, 110}</string>
-		<string>{110, 0}</string>
+		<real>333828046.70129102</real>
+		<string>{0, 361}</string>
+		<string>{361, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -11271,7 +11271,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>333827778.036479</real>
+		<real>333828042.60523599</real>
 		<string>{0, 855}</string>
 		<string>{784, 0}</string>
 		<dict>
@@ -11606,7 +11606,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>333827952.54711097</real>
+		<real>333828038.66866601</real>
 		<string>{0, 1337}</string>
 		<string>{435, 0}</string>
 		<dict>
@@ -11797,9 +11797,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>333827798.17736697</real>
+		<real>333828012.52709103</real>
 		<string>{0, 849}</string>
-		<string>{790, 0}</string>
+		<string>{122, 254}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -12130,9 +12130,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>333827733.27875203</real>
+		<real>333827990.94786298</real>
 		<string>{0, 1028}</string>
-		<string>{16, 762}</string>
+		<string>{187, 180}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13314,7 +13314,7 @@
 				<integer>955</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/LICENSE</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/README</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13332,7 +13332,7 @@
 				<integer>957</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/README</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/RCTextView.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13350,7 +13350,7 @@
 				<integer>959</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/STUtil.m</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/LICENSE</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13368,7 +13368,7 @@
 				<integer>961</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/controllers/PKAppDelegate.m</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/STAppOnLogin.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13386,7 +13386,7 @@
 				<integer>963</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/STUtil.h</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/shared/Common.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13404,7 +13404,7 @@
 				<integer>965</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/STAppOnLogin.m</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/STUtil.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13422,7 +13422,7 @@
 				<integer>967</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/STAppOnLogin.h</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/controllers/PKAppDelegate.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13440,7 +13440,7 @@
 				<integer>969</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/RCTextView.m</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/STUtil.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13458,7 +13458,7 @@
 				<integer>971</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/RCTextView.h</string>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/STAppOnLogin.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13476,15 +13476,7 @@
 				<integer>973</integer>
 			</dict>
 		</dict>
-		<dict>
-			<key>$class</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>72</integer>
-			</dict>
-			<key>NS.string</key>
-			<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/controllers/PKPrefsController.m</string>
-		</dict>
+		<string>file://localhost/Users/sveinbjorn/Desktop/PageKite/PageKite/util/RCTextView.m</string>
 	</array>
 	<key>$top</key>
 	<dict>
