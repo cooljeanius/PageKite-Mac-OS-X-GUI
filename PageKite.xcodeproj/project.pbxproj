@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F427C65213E4D3A8003B00F7 /* STAppLoginLaunch.m in Sources */ = {isa = PBXBuildFile; fileRef = F427C65113E4D3A8003B00F7 /* STAppLoginLaunch.m */; };
+		F4456C0F13E348A70063B9C9 /* pagekite.py in Resources */ = {isa = PBXBuildFile; fileRef = F4456C0D13E348A70063B9C9 /* pagekite.py */; };
+		F4456C1013E348A70063B9C9 /* pagekite.rc in Resources */ = {isa = PBXBuildFile; fileRef = F4456C0E13E348A70063B9C9 /* pagekite.rc */; };
+		F4456C1813E34DF70063B9C9 /* pagekite-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F4456C1613E34DF70063B9C9 /* pagekite-disabled.png */; };
+		F4456C1913E34DF70063B9C9 /* pagekite-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F4456C1713E34DF70063B9C9 /* pagekite-enabled.png */; };
+		F4456C1B13E34DFE0063B9C9 /* PageKite.icns in Resources */ = {isa = PBXBuildFile; fileRef = F4456C1A13E34DFE0063B9C9 /* PageKite.icns */; };
+		F4E8561013E33EF000D6FBAC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E8560F13E33EF000D6FBAC /* Cocoa.framework */; };
+		F4E8561A13E33EF000D6FBAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4E8561813E33EF000D6FBAC /* InfoPlist.strings */; };
+		F4E8561C13E33EF000D6FBAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E8561B13E33EF000D6FBAC /* main.m */; };
+		F4E8562013E33EF100D6FBAC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F4E8561E13E33EF100D6FBAC /* Credits.rtf */; };
+		F4E8562313E33EF100D6FBAC /* PageKiteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E8562213E33EF100D6FBAC /* PageKiteAppDelegate.m */; };
+		F4E8562613E33EF100D6FBAC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E8562413E33EF100D6FBAC /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F427C65013E4D3A8003B00F7 /* STAppLoginLaunch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAppLoginLaunch.h; sourceTree = "<group>"; };
+		F427C65113E4D3A8003B00F7 /* STAppLoginLaunch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAppLoginLaunch.m; sourceTree = "<group>"; };
+		F4456C0D13E348A70063B9C9 /* pagekite.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = pagekite.py; sourceTree = "<group>"; };
+		F4456C0E13E348A70063B9C9 /* pagekite.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pagekite.rc; sourceTree = "<group>"; };
+		F4456C1613E34DF70063B9C9 /* pagekite-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagekite-disabled.png"; sourceTree = "<group>"; };
+		F4456C1713E34DF70063B9C9 /* pagekite-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagekite-enabled.png"; sourceTree = "<group>"; };
+		F4456C1A13E34DFE0063B9C9 /* PageKite.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PageKite.icns; sourceTree = "<group>"; };
+		F4E8560B13E33EF000D6FBAC /* PageKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E8560F13E33EF000D6FBAC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F4E8561213E33EF000D6FBAC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F4E8561313E33EF000D6FBAC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F4E8561413E33EF000D6FBAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F4E8561713E33EF000D6FBAC /* PageKite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PageKite-Info.plist"; sourceTree = "<group>"; };
+		F4E8561913E33EF000D6FBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F4E8561B13E33EF000D6FBAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4E8561D13E33EF000D6FBAC /* PageKite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PageKite-Prefix.pch"; sourceTree = "<group>"; };
+		F4E8561F13E33EF100D6FBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F4E8562113E33EF100D6FBAC /* PageKiteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageKiteAppDelegate.h; sourceTree = "<group>"; };
+		F4E8562213E33EF100D6FBAC /* PageKiteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageKiteAppDelegate.m; sourceTree = "<group>"; };
+		F4E8562513E33EF100D6FBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4E8560813E33EF000D6FBAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E8561013E33EF000D6FBAC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4456C0C13E348A70063B9C9 /* pagekite */ = {
+			isa = PBXGroup;
+			children = (
+				F4456C0D13E348A70063B9C9 /* pagekite.py */,
+				F4456C0E13E348A70063B9C9 /* pagekite.rc */,
+			);
+			path = pagekite;
+			sourceTree = "<group>";
+		};
+		F4E8560013E33EF000D6FBAC = {
+			isa = PBXGroup;
+			children = (
+				F4E8561513E33EF000D6FBAC /* PageKite */,
+				F4E8560E13E33EF000D6FBAC /* Frameworks */,
+				F4E8560C13E33EF000D6FBAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4E8560C13E33EF000D6FBAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8560B13E33EF000D6FBAC /* PageKite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4E8560E13E33EF000D6FBAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8560F13E33EF000D6FBAC /* Cocoa.framework */,
+				F4E8561113E33EF000D6FBAC /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4E8561113E33EF000D6FBAC /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8561213E33EF000D6FBAC /* AppKit.framework */,
+				F4E8561313E33EF000D6FBAC /* CoreData.framework */,
+				F4E8561413E33EF000D6FBAC /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F4E8561513E33EF000D6FBAC /* PageKite */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8562113E33EF100D6FBAC /* PageKiteAppDelegate.h */,
+				F4E8562213E33EF100D6FBAC /* PageKiteAppDelegate.m */,
+				F427C65013E4D3A8003B00F7 /* STAppLoginLaunch.h */,
+				F427C65113E4D3A8003B00F7 /* STAppLoginLaunch.m */,
+				F4E8562413E33EF100D6FBAC /* MainMenu.xib */,
+				F4E8561613E33EF000D6FBAC /* Supporting Files */,
+			);
+			path = PageKite;
+			sourceTree = "<group>";
+		};
+		F4E8561613E33EF000D6FBAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8561713E33EF000D6FBAC /* PageKite-Info.plist */,
+				F4E8561813E33EF000D6FBAC /* InfoPlist.strings */,
+				F4456C0C13E348A70063B9C9 /* pagekite */,
+				F4456C1A13E34DFE0063B9C9 /* PageKite.icns */,
+				F4456C1613E34DF70063B9C9 /* pagekite-disabled.png */,
+				F4456C1713E34DF70063B9C9 /* pagekite-enabled.png */,
+				F4E8561B13E33EF000D6FBAC /* main.m */,
+				F4E8561D13E33EF000D6FBAC /* PageKite-Prefix.pch */,
+				F4E8561E13E33EF100D6FBAC /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4E8560A13E33EF000D6FBAC /* PageKite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4E8562913E33EF100D6FBAC /* Build configuration list for PBXNativeTarget "PageKite" */;
+			buildPhases = (
+				F4E8560713E33EF000D6FBAC /* Sources */,
+				F4E8560813E33EF000D6FBAC /* Frameworks */,
+				F4E8560913E33EF000D6FBAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PageKite;
+			productName = PageKite;
+			productReference = F4E8560B13E33EF000D6FBAC /* PageKite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4E8560213E33EF000D6FBAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
+			buildConfigurationList = F4E8560513E33EF000D6FBAC /* Build configuration list for PBXProject "PageKite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F4E8560013E33EF000D6FBAC;
+			productRefGroup = F4E8560C13E33EF000D6FBAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4E8560A13E33EF000D6FBAC /* PageKite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4E8560913E33EF000D6FBAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E8561A13E33EF000D6FBAC /* InfoPlist.strings in Resources */,
+				F4E8562013E33EF100D6FBAC /* Credits.rtf in Resources */,
+				F4E8562613E33EF100D6FBAC /* MainMenu.xib in Resources */,
+				F4456C0F13E348A70063B9C9 /* pagekite.py in Resources */,
+				F4456C1013E348A70063B9C9 /* pagekite.rc in Resources */,
+				F4456C1813E34DF70063B9C9 /* pagekite-disabled.png in Resources */,
+				F4456C1913E34DF70063B9C9 /* pagekite-enabled.png in Resources */,
+				F4456C1B13E34DFE0063B9C9 /* PageKite.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4E8560713E33EF000D6FBAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E8561C13E33EF000D6FBAC /* main.m in Sources */,
+				F4E8562313E33EF100D6FBAC /* PageKiteAppDelegate.m in Sources */,
+				F427C65213E4D3A8003B00F7 /* STAppLoginLaunch.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F4E8561813E33EF000D6FBAC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4E8561913E33EF000D6FBAC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F4E8561E13E33EF100D6FBAC /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4E8561F13E33EF100D6FBAC /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		F4E8562413E33EF100D6FBAC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4E8562513E33EF100D6FBAC /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4E8562713E33EF100D6FBAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		F4E8562813E33EF100D6FBAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		F4E8562A13E33EF100D6FBAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKite/PageKite-Prefix.pch";
+				INFOPLIST_FILE = "PageKite/PageKite-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F4E8562B13E33EF100D6FBAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKite/PageKite-Prefix.pch";
+				INFOPLIST_FILE = "PageKite/PageKite-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4E8560513E33EF000D6FBAC /* Build configuration list for PBXProject "PageKite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4E8562713E33EF100D6FBAC /* Debug */,
+				F4E8562813E33EF100D6FBAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4E8562913E33EF100D6FBAC /* Build configuration list for PBXNativeTarget "PageKite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4E8562A13E33EF100D6FBAC /* Debug */,
+				F4E8562B13E33EF100D6FBAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4E8560213E33EF000D6FBAC /* Project object */;
+}
