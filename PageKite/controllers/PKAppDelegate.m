@@ -83,7 +83,12 @@
 
     // connect if settings dictate thus
     if ([[NSUserDefaults standardUserDefaults] boolForKey: @"ConnectOnLogin"])
-        [taskController enablePageKite];
+        [taskController startPageKite];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+    [taskController stopPageKite];
 }
 
 #pragma mark -
@@ -93,11 +98,11 @@
 {
     if ([taskController running])
     {
-        [taskController disablePageKite];
+        [taskController startPageKite];
     }
     else
     {
-        [taskController enablePageKite];
+        [taskController stopPageKite];
     }
     [self updateInterface];
 }

@@ -34,7 +34,7 @@
 //}
 
 
-- (void)enablePageKite
+- (void)startPageKite
 {
     // Register to receive notifications on task termination
 	[[NSNotificationCenter defaultCenter] addObserver: self
@@ -49,12 +49,14 @@
     [pkTask setLaunchPath: @"/usr/bin/python"];
     [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
     [pkTask launch];
+    
     NSLog(@"Launched PageKite task");
     running = TRUE;
+
     [delegate taskStatusChanged];
 }
 
-- (void)disablePageKite
+- (void)stopPageKite
 {
     [pkTask terminate];
     [pkTask release];

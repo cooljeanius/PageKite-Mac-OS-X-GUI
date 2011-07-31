@@ -32,7 +32,7 @@
 @property (readwrite, assign) BOOL running;
 @property (readwrite, assign) id delegate;
 
-- (void)enablePageKite;
-- (void)disablePageKite;
+- (void)startPageKite;
+- (void)stopPageKite;
 
 @end
