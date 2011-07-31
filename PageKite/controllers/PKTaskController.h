@@ -34,16 +34,22 @@
 {
     BOOL                running;
     BOOL                connected;
+    
     NSTask              *pkTask;
-    id                  taskDelegate;
-    id                  logDelegate;
-}
-@property (readwrite, assign) id taskDelegate;
-@property (readwrite, assign) id logDelegate;
+    NSPipe              *outputPipe;
+	NSFileHandle        *readHandle;
+    
+    IBOutlet id         taskDelegate;
+    IBOutlet id         logDelegate;
 
+}
+@property (readwrite, assign) id taskDelegate, logDelegate;
+
+- (IBAction)togglePageKite: (id)sender;
 - (void)startPageKite;
 - (void)stopPageKite;
 
+// getter, setter methods
 - (BOOL)running;
 - (void)setRunning: (BOOL)r;
 - (BOOL)connected;

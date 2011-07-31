@@ -18,8 +18,9 @@
     IBOutlet id     logTextView;
     IBOutlet id     taskController;
 }
--(IBAction)showLogWindow: (id)sender;
--(void)updateInterface;
--(void)clearLog;
--(void)setLog: (NSString *)string;
+- (IBAction)showLogWindow: (id)sender;
+- (void)clearLog;
+- (void)setLog: (NSString *)string;
+- (void)appendToLog: (NSString *)string;
+
 @end

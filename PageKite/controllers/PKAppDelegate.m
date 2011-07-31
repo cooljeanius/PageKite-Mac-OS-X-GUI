@@ -23,22 +23,6 @@
 @implementation PKAppDelegate
 
 #pragma mark -
-
-- (id)init
-{
-    self = [super init];
-    if (self) 
-    {
-    }
-    return self;
-}
-
-- (void)dealloc
-{
-    [taskController release];
-}
-
-#pragma mark -
 #pragma mark App Delegate functions
 
 + (void)initialize 

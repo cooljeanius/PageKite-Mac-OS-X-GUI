@@ -23,6 +23,8 @@
 @implementation PKTaskController
 @synthesize taskDelegate, logDelegate;
 
+#pragma mark -
+
 - (id)init
 {
     self = [super init];
@@ -35,7 +37,7 @@
 }
 
 #pragma mark -
-#pragma Start/stop PageKite task
+#pragma mark Start/stop PageKite task
 
 - (IBAction)togglePageKite: (id)sender
 {
@@ -50,17 +52,31 @@
 {
     NSLog(@"Launching PageKite task");
     
-    // Register to receive notifications on task termination
-	[[NSNotificationCenter defaultCenter] addObserver: self
-											 selector: @selector(pageKiteEnded:)
-												 name: NSTaskDidTerminateNotification
-											   object: NULL];
+    // Create task
     pkTask = [[NSTask alloc] init];
-    
     NSString *pkPath = [[NSBundle mainBundle] pathForResource: @"pagekite.py" ofType: nil]; 
     
-    [pkTask setLaunchPath: @"/usr/bin/python"];
+    [pkTask setLaunchPath: @"/usr/bin/python"]; // default python interpreter path in Mac OS X
     [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
+    
+    // Register to receive notification on task output to stdout and stderr
+    outputPipe = [NSPipe pipe];
+    [pkTask setStandardOutput: outputPipe];
+    [pkTask setStandardError: outputPipe];
+    readHandle = [outputPipe fileHandleForReading];
+    [[NSNotificationCenter defaultCenter] addObserver: self 
+                                             selector: @selector(receivedTaskOutput:) 
+                                                 name: NSFileHandleReadCompletionNotification 
+                                               object: readHandle];
+    [readHandle readInBackgroundAndNotify];
+    
+    // Register to receive notifications on task termination
+	[[NSNotificationCenter defaultCenter] addObserver: self
+											 selector: @selector(taskEnded:)
+												 name: NSTaskDidTerminateNotification
+											   object: NULL];
+	
+	//set it off
     [pkTask launch];
     
     [self setRunning: TRUE];
@@ -68,18 +84,48 @@
 
 - (void)stopPageKite
 {
-    [pkTask terminate];
+    if (running)
+        [pkTask terminate];
 }
 
-- (void)pageKiteEnded: (NSNotification *)aNotification
+#pragma mark -
+#pragma mark Receiving task notifications
+
+- (void)taskEnded: (NSNotification *)aNotification
 {
     NSLog(@"PageKite task terminated");
     [self setRunning: FALSE];
     [[NSNotificationCenter defaultCenter] removeObserver: self];
+    
+    if (pkTask)
+        [pkTask release];
+}
+
+//  read from the file handle 
+- (void)receivedTaskOutput: (NSNotification *)aNotification
+{
+	//get the data from notification
+	NSData *data = [[aNotification userInfo] objectForKey: NSFileHandleNotificationDataItem];
+	
+	//make sure there's actual data
+	if ([data length]) 
+	{
+		// we decode the script output as UTF8 string
+        NSString *outputString = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+        if (outputString)
+        {
+            // send log delegate the output string
+            [logDelegate taskOutputReceived: outputString];
+            [outputString release];
+        }
+        
+		// we schedule the file handle to go and read more data in the background again.
+		[[aNotification object] readInBackgroundAndNotify];
+	}
 }
 
 #pragma mark -
-#pragma Running
+#pragma mark Running
 
 - (BOOL)running
 {
@@ -94,7 +140,7 @@
 }
 
 #pragma mark -
-#pragma Connected
+#pragma mark Connected
 
 - (BOOL)connected
 {

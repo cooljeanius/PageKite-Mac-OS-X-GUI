@@ -37,7 +37,4 @@
     NSImage             *disabledIcon;
     NSImage             *enabledIcon;    
 }
-
-- (IBAction)togglePageKite: (id)sender;
-- (void)updateInterface;
 @end

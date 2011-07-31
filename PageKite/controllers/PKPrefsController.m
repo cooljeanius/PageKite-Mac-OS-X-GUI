@@ -23,17 +23,13 @@
 @implementation PKPrefsController
 
 - (IBAction)showPreferences: (id)sender
-{
+{    
     // Read config file
     NSString *rcFileContents = [NSString stringWithContentsOfFile: PAGEKITE_RC_FILE_PATH usedEncoding: nil error: nil];
     
-    if (rcFileContents)
-    {
-        [configTextView setFont: [NSFont fontWithName: @"Monaco" size: 10.0]];
-        [configTextView setString: rcFileContents];
-    }
-    
-    [STUtil forceFront];
+    // Configure text view
+    [configTextView setFont: [NSFont fontWithName: @"Monaco" size: 10.0]];
+    [configTextView setString: rcFileContents];
     
     // update controls
     [startOnLoginCheckbox setIntValue: [[NSUserDefaults standardUserDefaults] boolForKey: @"StartOnLogin"]];
@@ -43,7 +39,10 @@
     if ([[NSUserDefaults standardUserDefaults] objectForKey: @"DefaultConfig"] != nil)
         [restoreDefaultsButton setEnabled: YES]; 
     
-    //show window
+    // hack to force LSUIElement==1 apps to the front
+    [STUtil forceFront];
+    
+    // show window
     [window makeKeyAndOrderFront: self];
 }
 

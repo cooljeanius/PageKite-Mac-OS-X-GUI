@@ -12,13 +12,13 @@
 
 - (IBAction)showLogWindow: (id)sender
 {
+    NSLog(@"Showign log window");
+    
+    // Configure text view
+    [logTextView setFont: [NSFont fontWithName: @"Monaco" size: 10.0]];
+    
     [STUtil forceFront];
     [window makeKeyAndOrderFront: self];
-}
-
-- (void)updateInterface
-{
-    
 }
 
 - (void)clearLog
@@ -33,10 +33,15 @@
 
 - (void)appendToLog: (NSString *)string
 {
-    
+    // append the ouput to the text storage in the text field
+    // this is the fastest way
+	NSTextStorage *text = [logTextView textStorage];
+	[text replaceCharactersInRange: NSMakeRange([text length], 0) withString: string];
+    [logTextView setFont: [NSFont fontWithName: @"Monaco" size: 10.0]];
+    [logTextView scrollRangeToVisible: NSMakeRange([text length], 0)];
 }
 
--(void)taskOutputReceived: (NSString *)string
+- (void)taskOutputReceived: (NSString *)string
 {
     [self appendToLog: string];
 }
@@ -46,13 +51,13 @@
     NSString *buttonTitle = [taskController running] ? @"Stop PageKite" : @"Start PageKite";
     [launchButton setTitle: buttonTitle];
     NSString *runningStr = [taskController running] ? @"YES" : @"NO";
-    [runningTextField setString: runningStr];
+    [runningTextField setStringValue: runningStr];
 }
 
 - (void)taskConnectedChanged
 {
     NSString *connectedStr = [taskController connected] ? @"YES" : @"NO";
-    [connectedTextField setString: connectedStr];
+    [connectedTextField setStringValue: connectedStr];
 }
 
 
