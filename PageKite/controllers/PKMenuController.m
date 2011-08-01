@@ -71,6 +71,12 @@
     
 }
 
+- (IBAction)showPreferences:(id)sender
+{
+    NSLog(@"Showing prefs");
+    [[[PKPrefsController alloc] initWithWindowNibName: @"Preferences"] showPreferences: self];
+}
+
 #pragma mark -
 #pragma mark Task delegate methods
 

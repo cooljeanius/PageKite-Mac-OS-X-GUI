@@ -20,6 +20,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PKTaskController.h"
+#import "PKPrefsController.h"
 
 @interface PKMenuController : NSObject
 {
@@ -31,4 +32,7 @@
     
     NSStatusItem                *statusItem;
 }
+- (IBAction)showPreferences:(id)sender;
+- (IBAction)showSetup: (id)sender;
+
 @end

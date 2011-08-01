@@ -24,7 +24,7 @@
 #import "STRunAppOnLogin.h"
 #import "PKTaskController.h"
 
-@interface PKPrefsController : NSObject
+@interface PKPrefsController : NSWindowController
 {
     IBOutlet id                 window;
     IBOutlet id                 configTextView;

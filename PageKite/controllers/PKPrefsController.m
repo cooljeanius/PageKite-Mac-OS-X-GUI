@@ -24,10 +24,12 @@
 
 - (IBAction)showPreferences: (id)sender
 {    
+    NSLog(@"Showing prefs within prefs");
     if ([window isVisible])
     {
         [STUtil forceFront];
         [window makeKeyAndOrderFront: self];
+        return;
     }
     
     // Read config file, store it in defaults for later checks on changes
@@ -101,7 +103,7 @@
     
     // write changed string to config file, report error on failure
     NSError* error = nil;
-    [configStr writeToFile: PAGEKITE_RC_FILE_PATH atomically: YES encoding:NSUTF8StringEncoding error: &error];
+    [configStr writeToFile: PAGEKITE_RC_FILE_PATH atomically: YES encoding: NSUTF8StringEncoding error: &error];
     if (error)
     {
         NSLog(@"error = %@", [error description]);
