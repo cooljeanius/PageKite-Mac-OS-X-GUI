@@ -27,7 +27,7 @@
 @interface PKPrefsController : NSWindowController
 {
     IBOutlet id                 window;
-    IBOutlet id                 configTextView;
+    IBOutlet RCTextView         *configTextView;
     IBOutlet id                 restartCheckbox;
     IBOutlet id                 startOnLoginCheckbox;
     IBOutlet id                 connectOnLoginCheckbox;
@@ -35,6 +35,8 @@
     IBOutlet id                 showLogOnStartCheckbox;
     IBOutlet PKTaskController   *taskController;
 }
+@property (readwrite, assign) id window;
+
 - (IBAction)applyPrefs: (id)sender;
 - (void)saveConfig: (NSString *)configStr;
 @end

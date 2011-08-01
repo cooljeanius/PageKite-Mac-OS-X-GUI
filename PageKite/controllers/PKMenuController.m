@@ -22,17 +22,6 @@
 
 @implementation PKMenuController
 
-- (id)init
-{
-    self = [super init];
-    if (self) 
-    {
-        
-    }
-    
-    return self;
-}
-
 - (void)awakeFromNib
 {
     // create status item
@@ -73,8 +62,18 @@
 
 - (IBAction)showPreferences:(id)sender
 {
-    NSLog(@"Showing prefs");
-    [[PKPrefsController alloc] initWithWindowNibName: @"Preferences"];
+    NSLog(@"%d", (int)prefsController);
+    if (prefsController == nil)
+    {
+        NSLog(@"Creating");
+        prefsController = [[PKPrefsController alloc] init];
+        [NSBundle loadNibNamed:@"Preferences" owner: prefsController];    
+        NSLog(@"SHowing");
+        [prefsController showWindow: sender];
+    }
+    else
+        NSLog(@"Retaincount: %d", [prefsController retainCount]);
+    
 }
 
 #pragma mark -

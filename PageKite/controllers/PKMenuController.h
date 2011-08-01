@@ -29,6 +29,7 @@
     IBOutlet id                 toggleMenuItem;
     IBOutlet id                 menu;
     IBOutlet PKTaskController   *taskController;
+    IBOutlet PKPrefsController  *prefsController;
     
     NSStatusItem                *statusItem;
 }

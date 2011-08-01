@@ -21,14 +21,15 @@
 #import "PKPrefsController.h"
 
 @implementation PKPrefsController
+@synthesize window;
 
-
-- (void)windowDidLoad
+-(id)init
 {
-    [super windowDidLoad];
+	return [super initWithWindowNibName: @"Preferences.xib"];
+}
 
-    NSLog(@"Showing prefs within prefs");
-    
+- (void)awakeFromNib
+{
     // Read config file, store it in defaults for later checks on changes
     NSString *rcFileContents = [NSString stringWithContentsOfFile: PAGEKITE_RC_FILE_PATH usedEncoding: nil error: nil];
     [DEFAULTS setObject: rcFileContents forKey: @"Config"];
@@ -48,12 +49,16 @@
     // show restore defaults button if we have a default config saved
     if ([DEFAULTS objectForKey: @"DefaultConfig"] != nil)
         [restoreDefaultsButton setEnabled: YES]; 
-    
-    // hack to force LSUIElement==1 apps to the front
+}
+
+- (void)showWindow:(id)sender
+{
+    // hack to force LSUIElement==1 app windows to the front
     [STUtil forceFront];
     
     // show window
     [window makeKeyAndOrderFront: self];
+    [super showWindow: sender];
 }
 
 - (IBAction)restoreDefaults:(id)sender
@@ -90,7 +95,7 @@
     if ([taskController running] && [restartCheckbox intValue] == TRUE)
         [taskController restartPageKite];
     
-    [window orderOut: self];
+    [window performClose: self];
 }
 
 - (void)saveConfig: (NSString *)configStr
@@ -110,19 +115,22 @@
 
 - (void)textDidChange:(NSNotification *)aNotification
 {
-    //[restartCheckbox setHidden: (TRUE && TRUE)];
-    [(RCTextView *)configTextView updateSyntaxColoring];
+    [configTextView updateSyntaxColoring];
     
     // if config has changed and task is running, we show restart checkbox
     if ([taskController running] && ![[DEFAULTS objectForKey: @"Config"] isEqualToString: [configTextView string]])
     {
+        if ([restartCheckbox isHidden]) // if showing for first time
+            [restartCheckbox setIntValue: TRUE];
+        
         [restartCheckbox setHidden: FALSE];
-        [restartCheckbox setIntValue: TRUE];
     }
 }
 
 - (void)windowWillClose:(NSNotification *)notification
 {
+    NSLog(@"Retain count: %d , Wdinow closing, releasing", (int)[self retainCount]);
+    
 	[self release];
 }
 
