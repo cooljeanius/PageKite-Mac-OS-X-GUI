@@ -44,6 +44,7 @@
     }
 }
 
+
 - (void)applicationDidFinishLaunching: (NSNotification *)aNotification
 {
     // create status item
@@ -83,6 +84,11 @@
     NSString *iconName = [taskController running] ? @"pagekite-enabled.png" : @"pagekite-disabled.png";
     [statusItem setImage: [NSImage imageNamed: iconName]];
 }
+
+#pragma mark -
+#pragma mark Setup
+
+- (IBAction)
 
 #pragma mark -
 #pragma mark Task delegate methods

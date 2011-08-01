@@ -20,6 +20,7 @@
 
 #define PAGEKITE_MACOSX_GUI_VERSION     @"0.4"
 
+#define PAGEKITE_TERMS_OF_SERVICE_URL   @"https://pagekite.net/support/terms/"
 #define PAGEKITE_VERSION                @"0.4"
 #define PAGEKITE_WEBSITE                @"http://pagekite.net"
 #define PAGEKITE_RC_FILE_PATH           [@"~/.pagekite.rc" stringByExpandingTildeInPath]
