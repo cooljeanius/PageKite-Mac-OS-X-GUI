@@ -16,6 +16,7 @@
     IBOutlet id     runningTextField;
     IBOutlet id     connectedTextField;
     IBOutlet id     logTextView;
+    IBOutlet id     runningProgressIndicator;
     IBOutlet id     taskController;
 }
 - (IBAction)showLogWindow: (id)sender;

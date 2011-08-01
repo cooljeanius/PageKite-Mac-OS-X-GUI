@@ -59,17 +59,24 @@
 
 - (void)taskRunningChanged
 {
-    NSColor *color = [taskController running] ? PAGEKITE_GOOD_COLOR : PAGEKITE_ERR_COLOR;
+    BOOL running = [taskController running];
     
-    NSString *buttonTitle = [taskController running] ? @"Stop PageKite" : @"Start PageKite";
+    if (running)
+        [runningProgressIndicator startAnimation: self];
+    else
+        [runningProgressIndicator stopAnimation: self];
+    
+    NSColor *color = running ? PAGEKITE_GOOD_COLOR : PAGEKITE_ERR_COLOR;
+    
+    NSString *buttonTitle = running ? @"Stop PageKite" : @"Start PageKite";
     [launchButton setTitle: buttonTitle];
 
-    NSString *runningStr = [taskController running] ? @"YES" : @"NO";
+    NSString *runningStr = running ? @"YES" : @"NO";
     [runningTextField setAttributedStringValue: [self logString: runningStr withColor: color]];
     
-    NSString *runningLogStr = [taskController running] ? @"PageKite running\n" : @"PageKite terminated\n";
+    NSString *runningLogStr = running ? @"PageKite running\n" : @"PageKite terminated\n";
     
-    if ([taskController running] && [DEFAULTS boolForKey: @"ShowLogOnStart"])
+    if (running && [DEFAULTS boolForKey: @"ShowLogOnStart"])
         [self showLogWindow: self];
     
     [self appendToLog: [self logString: runningLogStr withColor: color]];

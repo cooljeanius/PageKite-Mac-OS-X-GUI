@@ -1,5 +1,5 @@
 //
-//  PKSetupController.h
+//  PKMenuController.h
 //  PageKite.app - Mac OS X GUI for PageKite
 //
 //  Copyright 2011 Sveinbjorn Thordarson.
@@ -18,16 +18,17 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import "Common.h"
+#import <Foundation/Foundation.h>
+#import "PKTaskController.h"
 
-@interface PKSetupController : NSWindowController
+@interface PKMenuController : NSObject
 {
-    IBOutlet id     emailTextField;
-    IBOutlet id     pageNameTextField;
-    IBOutlet id     termsOfServiceCheckbox;
-    IBOutlet id     actionRadioButtons;
+    // interface builder outlets
+    IBOutlet id                 runningMenuItem;
+    IBOutlet id                 toggleMenuItem;
+    IBOutlet id                 menu;
+    IBOutlet PKTaskController   *taskController;
+    
+    NSStatusItem                *statusItem;
 }
--(IBAction)continueSetup:(id)sender;
--(IBAction)showTermsOfService:(id)sender;
-
 @end

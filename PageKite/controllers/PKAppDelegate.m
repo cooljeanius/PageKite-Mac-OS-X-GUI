@@ -44,16 +44,9 @@
     }
 }
 
-
+// called on launch completion
 - (void)applicationDidFinishLaunching: (NSNotification *)aNotification
 {
-    // create status item
-    statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength] retain];
-	[statusItem setHighlightMode: TRUE];
-	[statusItem setImage: [NSImage imageNamed: @"pagekite-disabled.png"]];
-	[statusItem setMenu: menu];
-	[statusItem setEnabled: YES];
-    
     // add to login items
     if ([DEFAULTS boolForKey: @"StartOnLogin"])
         [STRunAppOnLogin addAppToLoginItems];
@@ -65,50 +58,10 @@
         [taskController startPageKite];
 }
 
+// called on application termination
 - (void)applicationWillTerminate: (NSNotification *)aNotification
 {
     [taskController stopPageKite];
-}
-
-#pragma mark -
-#pragma mark PageKite control
-
-- (void)updateInterface
-{
-    NSString *runningStr = [taskController running] ? @"PageKit is running" : @"PageKit is not running";
-    [runningMenuItem setTitle: runningStr];
-    
-    NSString *enableDisable = [taskController running] ? @"Turn PageKite Off" : @"Turn PageKite On";
-    [toggleMenuItem setTitle: enableDisable];
-    
-    NSString *iconName = [taskController running] ? @"pagekite-enabled.png" : @"pagekite-disabled.png";
-    [statusItem setImage: [NSImage imageNamed: iconName]];
-}
-
-#pragma mark -
-#pragma mark Setup
-
-- (IBAction)
-
-#pragma mark -
-#pragma mark Task delegate methods
-
-- (void)taskRunningChanged;
-{
-    [self updateInterface];
-}
-
-- (void)taskConnectedChanged;
-{
-    [self updateInterface];
-}
-
-#pragma mark -
-#pragma mark Menu
-
-- (void)menuWillOpen: (NSMenu *)menu
-{
-    [self updateInterface];
 }
 
 @end
