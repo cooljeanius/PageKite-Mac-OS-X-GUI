@@ -30,8 +30,9 @@
         [window makeKeyAndOrderFront: self];
     }
         
-    // Read config file
+    // Read config file, store it in defaults for later checks on changes
     NSString *rcFileContents = [NSString stringWithContentsOfFile: PAGEKITE_RC_FILE_PATH usedEncoding: nil error: nil];
+    [DEFAULTS setObject: rcFileContents forKey: @"Config"];
     
     // Configure text view
     [configTextView setFont: PAGEKITE_LOG_FONT];
@@ -68,24 +69,12 @@
     [DEFAULTS setObject: [NSNumber numberWithBool: [connectOnLoginCheckbox intValue]] forKey: @"ConnectOnLogin"];
     [DEFAULTS setObject: [NSNumber numberWithBool: [showLogOnStartCheckbox intValue]] forKey: @"ShowLogOnStart"];
     
-    // If config string has changed, write it to disk and save into defaults
-    NSString *configFileStr = [DEFAULTS objectForKey: @"ConfigFile"]; 
     
+    // If config string has changed, write it to disk and save into defaults
     NSString *configStr = [configTextView string];
+    NSString *configFileStr = [DEFAULTS objectForKey: @"Config"]; 
     if (![configStr isEqualToString: configFileStr])
-    {
-        // save a copy of config file to defaults
-        [DEFAULTS setObject: configStr forKey: @"ConfigFile"];
-        
-        // write changed string to config file
-        NSError* error = nil;
-        [configStr writeToFile: PAGEKITE_RC_FILE_PATH atomically: YES encoding:NSUTF8StringEncoding error: &error];
-        if (error)
-        {
-            NSLog(@"error = %@", [error description]);
-            [STUtil alert: @"Error" subText: [NSString stringWithFormat: @"Error: %s", [error description]]];
-        }
-    }
+        [self saveConfig: configFileStr];
     
     // add to login items
     if ([DEFAULTS boolForKey: @"StartOnLogin"])
@@ -97,6 +86,21 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [window orderOut: self];
+}
+
+- (void)saveConfig: (NSString *)configStr
+{
+    // save a copy of config file to defaults
+    [DEFAULTS setObject: configStr forKey: @"Config"];
+    
+    // write changed string to config file, report error on failure
+    NSError* error = nil;
+    [configStr writeToFile: PAGEKITE_RC_FILE_PATH atomically: YES encoding:NSUTF8StringEncoding error: &error];
+    if (error)
+    {
+        NSLog(@"error = %@", [error description]);
+        [STUtil alert: @"Error" subText: [NSString stringWithFormat: @"Error: %s", [error description]]];
+    }
 }
 
 - (void)textDidChange:(NSNotification *)aNotification

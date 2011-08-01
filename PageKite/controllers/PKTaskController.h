@@ -55,6 +55,8 @@
 - (void)startPageKite;
 - (void)stopPageKite;
 
+- (void)sendOutputToLogDelegate: (NSData *)data forFileHandle: (NSFileHandle *)fh;
+
 // getter, setter methods
 - (BOOL)running;
 - (void)setRunning: (BOOL)r;

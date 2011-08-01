@@ -68,6 +68,10 @@
     [runningTextField setAttributedStringValue: [self logString: runningStr withColor: color]];
     
     NSString *runningLogStr = [taskController running] ? @"PageKite running\n" : @"PageKite terminated\n";
+    
+    if ([taskController running] && [DEFAULTS boolForKey: @"ShowLogOnStart"])
+        [self showLogWindow: self];
+    
     [self appendToLog: [self logString: runningLogStr withColor: color]];
 }
 
