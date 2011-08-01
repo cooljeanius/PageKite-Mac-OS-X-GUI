@@ -29,7 +29,7 @@
         [STUtil forceFront];
         [window makeKeyAndOrderFront: self];
     }
-        
+    
     // Read config file, store it in defaults for later checks on changes
     NSString *rcFileContents = [NSString stringWithContentsOfFile: PAGEKITE_RC_FILE_PATH usedEncoding: nil error: nil];
     [DEFAULTS setObject: rcFileContents forKey: @"Config"];
@@ -43,6 +43,7 @@
     [connectOnLoginCheckbox setIntValue: [DEFAULTS boolForKey: @"ConnectOnLogin"]];
     [showLogOnStartCheckbox setIntValue: [DEFAULTS boolForKey: @"ShowLogOnStart"]];
     
+    [restartCheckbox setHidden: TRUE];
     [restartCheckbox setIntValue: TRUE];
     
     // show restore defaults button if we have a default config saved
