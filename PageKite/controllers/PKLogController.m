@@ -12,8 +12,6 @@
 
 - (IBAction)showLogWindow: (id)sender
 {
-    NSLog(@"Showign log window");
-    
     // Configure text view
     [logTextView setFont: PAGEKITE_LOG_FONT];
     

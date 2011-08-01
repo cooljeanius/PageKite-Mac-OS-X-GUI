@@ -32,3 +32,6 @@
 #define PAGEKITE_RC_CONFIG_COLOR        [NSColor colorWithDeviceRed: 0 green: 0 blue: 0.5 alpha: 1]
 #define PAGEKITE_ERR_COLOR              [NSColor redColor]
 #define PAGEKITE_GOOD_COLOR             [NSColor colorWithDeviceRed: 0 green: 0.75 blue:0 alpha: 1.0]
+
+// convenience macros
+#define DEFAULTS                        [NSUserDefaults standardUserDefaults]

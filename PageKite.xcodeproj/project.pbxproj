@@ -14,7 +14,7 @@
 		F4BD6E0D13E5C4A000ABB348 /* pagekite-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0A13E5C4A000ABB348 /* pagekite-enabled.png */; };
 		F4BD6E0E13E5C4A000ABB348 /* PageKite.icns in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0B13E5C4A000ABB348 /* PageKite.icns */; };
 		F4BD6E1E13E5C4CD00ABB348 /* PKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E1213E5C4CD00ABB348 /* PKAppDelegate.m */; };
-		F4BD6E2113E5C4CD00ABB348 /* STAppOnLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E1B13E5C4CD00ABB348 /* STAppOnLogin.m */; };
+		F4BD6E2113E5C4CD00ABB348 /* STRunAppOnLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E1B13E5C4CD00ABB348 /* STRunAppOnLogin.m */; };
 		F4BD6E2213E5C4CD00ABB348 /* STUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E1D13E5C4CD00ABB348 /* STUtil.m */; };
 		F4BD6E2513E5C56C00ABB348 /* RCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E2413E5C56C00ABB348 /* RCTextView.m */; };
 		F4BD6E2813E5C68000ABB348 /* PKTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E2713E5C68000ABB348 /* PKTaskController.m */; };
@@ -38,8 +38,8 @@
 		F4BD6E1213E5C4CD00ABB348 /* PKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAppDelegate.m; sourceTree = "<group>"; };
 		F4BD6E1313E5C4CD00ABB348 /* PKPrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPrefsController.h; sourceTree = "<group>"; };
 		F4BD6E1613E5C4CD00ABB348 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		F4BD6E1A13E5C4CD00ABB348 /* STAppOnLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAppOnLogin.h; sourceTree = "<group>"; };
-		F4BD6E1B13E5C4CD00ABB348 /* STAppOnLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAppOnLogin.m; sourceTree = "<group>"; };
+		F4BD6E1A13E5C4CD00ABB348 /* STRunAppOnLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; path = STRunAppOnLogin.h; sourceTree = "<group>"; };
+		F4BD6E1B13E5C4CD00ABB348 /* STRunAppOnLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRunAppOnLogin.m; sourceTree = "<group>"; };
 		F4BD6E1C13E5C4CD00ABB348 /* STUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUtil.h; sourceTree = "<group>"; };
 		F4BD6E1D13E5C4CD00ABB348 /* STUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUtil.m; sourceTree = "<group>"; };
 		F4BD6E2313E5C56C00ABB348 /* RCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTextView.h; sourceTree = "<group>"; };
@@ -122,8 +122,8 @@
 			children = (
 				F4BD6E2313E5C56C00ABB348 /* RCTextView.h */,
 				F4BD6E2413E5C56C00ABB348 /* RCTextView.m */,
-				F4BD6E1A13E5C4CD00ABB348 /* STAppOnLogin.h */,
-				F4BD6E1B13E5C4CD00ABB348 /* STAppOnLogin.m */,
+				F4BD6E1A13E5C4CD00ABB348 /* STRunAppOnLogin.h */,
+				F4BD6E1B13E5C4CD00ABB348 /* STRunAppOnLogin.m */,
 				F4BD6E1C13E5C4CD00ABB348 /* STUtil.h */,
 				F4BD6E1D13E5C4CD00ABB348 /* STUtil.m */,
 			);
@@ -256,7 +256,7 @@
 			files = (
 				F4E8561C13E33EF000D6FBAC /* main.m in Sources */,
 				F4BD6E1E13E5C4CD00ABB348 /* PKAppDelegate.m in Sources */,
-				F4BD6E2113E5C4CD00ABB348 /* STAppOnLogin.m in Sources */,
+				F4BD6E2113E5C4CD00ABB348 /* STRunAppOnLogin.m in Sources */,
 				F4BD6E2213E5C4CD00ABB348 /* STUtil.m in Sources */,
 				F4BD6E2513E5C56C00ABB348 /* RCTextView.m in Sources */,
 				F4BD6E2813E5C68000ABB348 /* PKTaskController.m in Sources */,

@@ -23,7 +23,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface STAppOnLogin : NSObject 
+@interface STRunAppOnLogin : NSObject 
 {
 
 }

@@ -53,13 +53,13 @@
 	[statusItem setEnabled: YES];
     
     // add to login items
-    if ([[NSUserDefaults standardUserDefaults] boolForKey: @"StartOnLogin"])
-        [STAppOnLogin addAppToLoginItems];
+    if ([DEFAULTS boolForKey: @"StartOnLogin"])
+        [STRunAppOnLogin addAppToLoginItems];
     else
-        [STAppOnLogin removeAppFromLoginItems];
+        [STRunAppOnLogin removeAppFromLoginItems];
 
     // connect if settings dictate thus
-    if ([[NSUserDefaults standardUserDefaults] boolForKey: @"ConnectOnLogin"])
+    if ([DEFAULTS boolForKey: @"ConnectOnLogin"])
         [taskController startPageKite];
 }
 

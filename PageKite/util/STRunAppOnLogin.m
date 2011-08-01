@@ -20,10 +20,10 @@
 
 
 
-#import "STAppOnLogin.h"
+#import "STRunAppOnLogin.h"
 
 
-@implementation STAppOnLogin
+@implementation STRunAppOnLogin
 
 + (NSString *)appPath
 {

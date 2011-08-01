@@ -21,6 +21,7 @@
 #import "Common.h"
 #import "STUtil.h"
 #import "RCTextView.h"
+#import "STRunAppOnLogin.h"
 
 @interface PKPrefsController : NSObject
 {

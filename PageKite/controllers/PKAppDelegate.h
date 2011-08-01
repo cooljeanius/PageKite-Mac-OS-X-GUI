@@ -20,7 +20,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Common.h"
-#import "STAppOnLogin.h"
+#import "STRunAppOnLogin.h"
 #import "RCTextView.h"
 #import "PKTaskController.h"
 

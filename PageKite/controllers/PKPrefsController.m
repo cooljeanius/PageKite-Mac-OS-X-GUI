@@ -38,11 +38,11 @@
     [configTextView setString: rcFileContents];
     
     // update controls
-    [startOnLoginCheckbox setIntValue: [[NSUserDefaults standardUserDefaults] boolForKey: @"StartOnLogin"]];
-    [connectOnLoginCheckbox setIntValue: [[NSUserDefaults standardUserDefaults] boolForKey: @"ConnectOnLogin"]];
+    [startOnLoginCheckbox setIntValue: [DEFAULTS boolForKey: @"StartOnLogin"]];
+    [connectOnLoginCheckbox setIntValue: [DEFAULTS boolForKey: @"ConnectOnLogin"]];
     
     // show restore defaults button if we have a default config saved
-    if ([[NSUserDefaults standardUserDefaults] objectForKey: @"DefaultConfig"] != nil)
+    if ([DEFAULTS objectForKey: @"DefaultConfig"] != nil)
         [restoreDefaultsButton setEnabled: YES]; 
     
     // hack to force LSUIElement==1 apps to the front
@@ -61,21 +61,19 @@
 }
 
 - (IBAction)applyPrefs:(id)sender
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+{    
     // set control states
-    [defaults setObject: [NSNumber numberWithBool: [startOnLoginCheckbox intValue]] forKey: @"StartOnLogin"];
-    [defaults setObject: [NSNumber numberWithBool: [connectOnLoginCheckbox intValue]] forKey: @"ConnectOnLogin"];
+    [DEFAULTS setObject: [NSNumber numberWithBool: [startOnLoginCheckbox intValue]] forKey: @"StartOnLogin"];
+    [DEFAULTS setObject: [NSNumber numberWithBool: [connectOnLoginCheckbox intValue]] forKey: @"ConnectOnLogin"];
     
     // If config string has changed, write it to disk and save into defaults
-    NSString *configFileStr = [defaults objectForKey: @"ConfigFile"]; 
+    NSString *configFileStr = [DEFAULTS objectForKey: @"ConfigFile"]; 
     
     NSString *configStr = [configTextView string];
     if (![configStr isEqualToString: configFileStr])
     {
         // save a copy of config file to defaults
-        [defaults setObject: configStr forKey: @"ConfigFile"];
+        [DEFAULTS setObject: configStr forKey: @"ConfigFile"];
         
         // write changed string to config file
         NSError* error = nil;
@@ -87,7 +85,13 @@
         }
     }
     
-    // make sure they are saved to disk
+    // add to login items
+    if ([DEFAULTS boolForKey: @"StartOnLogin"])
+        [STRunAppOnLogin addAppToLoginItems];
+    else
+        [STRunAppOnLogin removeAppFromLoginItems];
+    
+    // make sure defaults are saved to disk
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [window orderOut: self];
