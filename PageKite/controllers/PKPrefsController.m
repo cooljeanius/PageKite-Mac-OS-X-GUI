@@ -40,6 +40,7 @@
     // update controls
     [startOnLoginCheckbox setIntValue: [DEFAULTS boolForKey: @"StartOnLogin"]];
     [connectOnLoginCheckbox setIntValue: [DEFAULTS boolForKey: @"ConnectOnLogin"]];
+    [showLogOnStartCheckbox setIntValue: [DEFAULTS boolForKey: @"ShowLogOnStart"]];
     
     // show restore defaults button if we have a default config saved
     if ([DEFAULTS objectForKey: @"DefaultConfig"] != nil)
