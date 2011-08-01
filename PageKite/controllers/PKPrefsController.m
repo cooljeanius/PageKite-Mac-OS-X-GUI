@@ -65,6 +65,7 @@
     // set control states
     [DEFAULTS setObject: [NSNumber numberWithBool: [startOnLoginCheckbox intValue]] forKey: @"StartOnLogin"];
     [DEFAULTS setObject: [NSNumber numberWithBool: [connectOnLoginCheckbox intValue]] forKey: @"ConnectOnLogin"];
+    [DEFAULTS setObject: [NSNumber numberWithBool: [showLogOnStartCheckbox intValue]] forKey: @"ShowLogOnStart"];
     
     // If config string has changed, write it to disk and save into defaults
     NSString *configFileStr = [DEFAULTS objectForKey: @"ConfigFile"]; 

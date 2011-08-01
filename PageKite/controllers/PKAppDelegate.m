@@ -32,6 +32,7 @@
     NSMutableDictionary *defaultPrefs = [NSMutableDictionary dictionary];
     [defaultPrefs setValue: [NSNumber numberWithBool: YES] forKey: @"StartOnLogin"];
     [defaultPrefs setValue: [NSNumber numberWithBool: YES] forKey: @"ConnectOnLogin"];
+    [defaultPrefs setValue: [NSNumber numberWithBool: NO] forKey: @"ShowLogOnStart"];
     
     // register the dictionary of defaults
     [[NSUserDefaults standardUserDefaults] registerDefaults: defaultPrefs];

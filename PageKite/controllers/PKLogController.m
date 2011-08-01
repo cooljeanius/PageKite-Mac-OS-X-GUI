@@ -92,7 +92,7 @@
                           PAGEKITE_LOG_FONT,                NSFontAttributeName,
                           nil];
     
-    return [[NSAttributedString alloc] initWithString: string attributes: attr];
+    return [[[NSAttributedString alloc] initWithString: string attributes: attr] autorelease];
 }
 
 

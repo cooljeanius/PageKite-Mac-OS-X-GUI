@@ -31,6 +31,7 @@
     IBOutlet id     startOnLoginCheckbox;
     IBOutlet id     connectOnLoginCheckbox;
     IBOutlet id     restoreDefaultsButton;
+    IBOutlet id     showLogOnStartCheckbox;
 }
 - (IBAction)showPreferences: (id)sender;
 - (IBAction)applyPrefs: (id)sender;

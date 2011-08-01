@@ -10,6 +10,7 @@
 		F40D1A1713E5E35900F82D17 /* PKLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40D1A1613E5E35900F82D17 /* PKLogController.m */; };
 		F4456C0F13E348A70063B9C9 /* pagekite.py in Resources */ = {isa = PBXBuildFile; fileRef = F4456C0D13E348A70063B9C9 /* pagekite.py */; };
 		F4456C1013E348A70063B9C9 /* pagekite.rc in Resources */ = {isa = PBXBuildFile; fileRef = F4456C0E13E348A70063B9C9 /* pagekite.rc */; };
+		F4509F6E13E7010F005EEC2D /* Setup.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4509F6C13E7010F005EEC2D /* Setup.xib */; };
 		F4BD6E0C13E5C4A000ABB348 /* pagekite-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0913E5C4A000ABB348 /* pagekite-disabled.png */; };
 		F4BD6E0D13E5C4A000ABB348 /* pagekite-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0A13E5C4A000ABB348 /* pagekite-enabled.png */; };
 		F4BD6E0E13E5C4A000ABB348 /* PageKite.icns in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0B13E5C4A000ABB348 /* PageKite.icns */; };
@@ -19,10 +20,9 @@
 		F4BD6E2513E5C56C00ABB348 /* RCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E2413E5C56C00ABB348 /* RCTextView.m */; };
 		F4BD6E2813E5C68000ABB348 /* PKTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E2713E5C68000ABB348 /* PKTaskController.m */; };
 		F4BD6E2A13E5C6C600ABB348 /* PKPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BD6E2913E5C6C600ABB348 /* PKPrefsController.m */; };
+		F4BDEADA13E7028500AD7892 /* pagekite-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F4BDEAD913E7028500AD7892 /* pagekite-logo.png */; };
 		F4E8561013E33EF000D6FBAC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E8560F13E33EF000D6FBAC /* Cocoa.framework */; };
-		F4E8561A13E33EF000D6FBAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4E8561813E33EF000D6FBAC /* InfoPlist.strings */; };
 		F4E8561C13E33EF000D6FBAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E8561B13E33EF000D6FBAC /* main.m */; };
-		F4E8562013E33EF100D6FBAC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F4E8561E13E33EF100D6FBAC /* Credits.rtf */; };
 		F4E8562613E33EF100D6FBAC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E8562413E33EF100D6FBAC /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +31,7 @@
 		F40D1A1613E5E35900F82D17 /* PKLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKLogController.m; sourceTree = "<group>"; };
 		F4456C0D13E348A70063B9C9 /* pagekite.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = pagekite.py; sourceTree = "<group>"; };
 		F4456C0E13E348A70063B9C9 /* pagekite.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pagekite.rc; sourceTree = "<group>"; };
+		F4509F6D13E7010F005EEC2D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Setup.xib; sourceTree = "<group>"; };
 		F4BD6E0913E5C4A000ABB348 /* pagekite-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagekite-disabled.png"; sourceTree = "<group>"; };
 		F4BD6E0A13E5C4A000ABB348 /* pagekite-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagekite-enabled.png"; sourceTree = "<group>"; };
 		F4BD6E0B13E5C4A000ABB348 /* PageKite.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PageKite.icns; sourceTree = "<group>"; };
@@ -38,7 +39,7 @@
 		F4BD6E1213E5C4CD00ABB348 /* PKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAppDelegate.m; sourceTree = "<group>"; };
 		F4BD6E1313E5C4CD00ABB348 /* PKPrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKPrefsController.h; sourceTree = "<group>"; };
 		F4BD6E1613E5C4CD00ABB348 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		F4BD6E1A13E5C4CD00ABB348 /* STRunAppOnLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; path = STRunAppOnLogin.h; sourceTree = "<group>"; };
+		F4BD6E1A13E5C4CD00ABB348 /* STRunAppOnLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRunAppOnLogin.h; sourceTree = "<group>"; };
 		F4BD6E1B13E5C4CD00ABB348 /* STRunAppOnLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRunAppOnLogin.m; sourceTree = "<group>"; };
 		F4BD6E1C13E5C4CD00ABB348 /* STUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUtil.h; sourceTree = "<group>"; };
 		F4BD6E1D13E5C4CD00ABB348 /* STUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUtil.m; sourceTree = "<group>"; };
@@ -49,15 +50,14 @@
 		F4BD6E2913E5C6C600ABB348 /* PKPrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKPrefsController.m; sourceTree = "<group>"; };
 		F4BD6E2B13E5CDBA00ABB348 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		F4BD6E2C13E5CDBA00ABB348 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
+		F4BDEAD913E7028500AD7892 /* pagekite-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagekite-logo.png"; sourceTree = "<group>"; };
 		F4E8560B13E33EF000D6FBAC /* PageKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E8560F13E33EF000D6FBAC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F4E8561213E33EF000D6FBAC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		F4E8561413E33EF000D6FBAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4E8561713E33EF000D6FBAC /* PageKite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PageKite-Info.plist"; sourceTree = "<group>"; };
-		F4E8561913E33EF000D6FBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4E8561B13E33EF000D6FBAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4E8561D13E33EF000D6FBAC /* PageKite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PageKite-Prefix.pch"; sourceTree = "<group>"; };
-		F4E8561F13E33EF100D6FBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		F4E8562513E33EF100D6FBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,9 +82,19 @@
 			path = pagekite;
 			sourceTree = "<group>";
 		};
+		F48AAA6513E715F3002A1066 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				F4BD6E2B13E5CDBA00ABB348 /* LICENSE */,
+				F4BD6E2C13E5CDBA00ABB348 /* README */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
 		F4BD6E0813E5C4A000ABB348 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4BDEAD913E7028500AD7892 /* pagekite-logo.png */,
 				F4BD6E0913E5C4A000ABB348 /* pagekite-disabled.png */,
 				F4BD6E0A13E5C4A000ABB348 /* pagekite-enabled.png */,
 				F4BD6E0B13E5C4A000ABB348 /* PageKite.icns */,
@@ -161,6 +171,7 @@
 		F4E8561513E33EF000D6FBAC /* PageKite */ = {
 			isa = PBXGroup;
 			children = (
+				F48AAA6513E715F3002A1066 /* Documentation */,
 				F4BD6E1513E5C4CD00ABB348 /* Shared */,
 				F4BD6E1013E5C4CD00ABB348 /* Controllers */,
 				F4BD6E1913E5C4CD00ABB348 /* Util */,
@@ -172,16 +183,13 @@
 		F4E8561613E33EF000D6FBAC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F4BD6E2B13E5CDBA00ABB348 /* LICENSE */,
-				F4BD6E2C13E5CDBA00ABB348 /* README */,
 				F4E8562413E33EF100D6FBAC /* MainMenu.xib */,
+				F4509F6C13E7010F005EEC2D /* Setup.xib */,
 				F4456C0C13E348A70063B9C9 /* pagekite */,
 				F4BD6E0813E5C4A000ABB348 /* resources */,
 				F4E8561713E33EF000D6FBAC /* PageKite-Info.plist */,
-				F4E8561813E33EF000D6FBAC /* InfoPlist.strings */,
 				F4E8561B13E33EF000D6FBAC /* main.m */,
 				F4E8561D13E33EF000D6FBAC /* PageKite-Prefix.pch */,
-				F4E8561E13E33EF100D6FBAC /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -236,14 +244,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E8561A13E33EF000D6FBAC /* InfoPlist.strings in Resources */,
-				F4E8562013E33EF100D6FBAC /* Credits.rtf in Resources */,
 				F4E8562613E33EF100D6FBAC /* MainMenu.xib in Resources */,
 				F4456C0F13E348A70063B9C9 /* pagekite.py in Resources */,
 				F4456C1013E348A70063B9C9 /* pagekite.rc in Resources */,
 				F4BD6E0C13E5C4A000ABB348 /* pagekite-disabled.png in Resources */,
 				F4BD6E0D13E5C4A000ABB348 /* pagekite-enabled.png in Resources */,
 				F4BD6E0E13E5C4A000ABB348 /* PageKite.icns in Resources */,
+				F4509F6E13E7010F005EEC2D /* Setup.xib in Resources */,
+				F4BDEADA13E7028500AD7892 /* pagekite-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,20 +276,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F4E8561813E33EF000D6FBAC /* InfoPlist.strings */ = {
+		F4509F6C13E7010F005EEC2D /* Setup.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F4E8561913E33EF000D6FBAC /* en */,
+				F4509F6D13E7010F005EEC2D /* en */,
 			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F4E8561E13E33EF100D6FBAC /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4E8561F13E33EF100D6FBAC /* en */,
-			);
-			name = Credits.rtf;
+			name = Setup.xib;
 			sourceTree = "<group>";
 		};
 		F4E8562413E33EF100D6FBAC /* MainMenu.xib */ = {
