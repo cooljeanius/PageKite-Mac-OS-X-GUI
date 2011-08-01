@@ -16,6 +16,7 @@
 		F48AAA6F13E761D6002A1066 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = F48AAA6D13E761D6002A1066 /* TODO */; };
 		F48AAA7013E761D6002A1066 /* VERSIONS in Resources */ = {isa = PBXBuildFile; fileRef = F48AAA6E13E761D6002A1066 /* VERSIONS */; };
 		F48AAA7313E76286002A1066 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48AAA7113E76286002A1066 /* Preferences.xib */; };
+		F48AAA7613E768A4002A1066 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = F48AAA7513E768A4002A1066 /* Test.m */; };
 		F4BD6E0C13E5C4A000ABB348 /* pagekite-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0913E5C4A000ABB348 /* pagekite-disabled.png */; };
 		F4BD6E0D13E5C4A000ABB348 /* pagekite-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0A13E5C4A000ABB348 /* pagekite-enabled.png */; };
 		F4BD6E0E13E5C4A000ABB348 /* PageKite.icns in Resources */ = {isa = PBXBuildFile; fileRef = F4BD6E0B13E5C4A000ABB348 /* PageKite.icns */; };
@@ -44,6 +45,8 @@
 		F48AAA6D13E761D6002A1066 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = SOURCE_ROOT; };
 		F48AAA6E13E761D6002A1066 /* VERSIONS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSIONS; sourceTree = SOURCE_ROOT; };
 		F48AAA7213E76286002A1066 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
+		F48AAA7413E768A3002A1066 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		F48AAA7513E768A4002A1066 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		F4BD6E0913E5C4A000ABB348 /* pagekite-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagekite-disabled.png"; sourceTree = "<group>"; };
 		F4BD6E0A13E5C4A000ABB348 /* pagekite-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagekite-enabled.png"; sourceTree = "<group>"; };
 		F4BD6E0B13E5C4A000ABB348 /* PageKite.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PageKite.icns; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				F4BD6E2713E5C68000ABB348 /* PKTaskController.m */,
 				F4BD6E1313E5C4CD00ABB348 /* PKPrefsController.h */,
 				F4BD6E2913E5C6C600ABB348 /* PKPrefsController.m */,
+				F48AAA7413E768A3002A1066 /* Test.h */,
+				F48AAA7513E768A4002A1066 /* Test.m */,
 				F40D1A1513E5E35900F82D17 /* PKLogController.h */,
 				F40D1A1613E5E35900F82D17 /* PKLogController.m */,
 				F48AAA6713E73F50002A1066 /* PKSetupController.h */,
@@ -294,6 +299,7 @@
 				F40D1A1713E5E35900F82D17 /* PKLogController.m in Sources */,
 				F48AAA6913E73F50002A1066 /* PKSetupController.m in Sources */,
 				F48AAA6C13E74D52002A1066 /* PKMenuController.m in Sources */,
+				F48AAA7613E768A4002A1066 /* Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

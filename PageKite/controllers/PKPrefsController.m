@@ -22,15 +22,12 @@
 
 @implementation PKPrefsController
 
-- (IBAction)showPreferences: (id)sender
-{    
+
+- (void)windowDidLoad
+{
+    [super windowDidLoad];
+
     NSLog(@"Showing prefs within prefs");
-    if ([window isVisible])
-    {
-        [STUtil forceFront];
-        [window makeKeyAndOrderFront: self];
-        return;
-    }
     
     // Read config file, store it in defaults for later checks on changes
     NSString *rcFileContents = [NSString stringWithContentsOfFile: PAGEKITE_RC_FILE_PATH usedEncoding: nil error: nil];
@@ -124,5 +121,9 @@
     }
 }
 
+- (void)windowWillClose:(NSNotification *)notification
+{
+	[self release];
+}
 
 @end

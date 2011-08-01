@@ -74,7 +74,7 @@
 - (IBAction)showPreferences:(id)sender
 {
     NSLog(@"Showing prefs");
-    [[[PKPrefsController alloc] initWithWindowNibName: @"Preferences"] showPreferences: self];
+    [[PKPrefsController alloc] initWithWindowNibName: @"Preferences"];
 }
 
 #pragma mark -

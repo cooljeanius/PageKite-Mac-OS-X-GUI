@@ -35,7 +35,6 @@
     IBOutlet id                 showLogOnStartCheckbox;
     IBOutlet PKTaskController   *taskController;
 }
-- (IBAction)showPreferences: (id)sender;
 - (IBAction)applyPrefs: (id)sender;
 - (void)saveConfig: (NSString *)configStr;
 @end
