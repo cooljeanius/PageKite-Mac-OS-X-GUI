@@ -52,6 +52,7 @@
 @property (readwrite, assign) id taskDelegate, logDelegate;
 
 - (IBAction)togglePageKite: (id)sender;
+- (void)restartPageKite;
 - (void)startPageKite;
 - (void)stopPageKite;
 

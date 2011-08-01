@@ -52,9 +52,7 @@
 #pragma mark PageKite control
 
 - (void)updateInterface
-{
-    [statusItem setMenu: menu];
-    
+{    
     NSString *runningStr = [taskController running] ? @"PageKit is running" : @"PageKit is not running";
     [runningMenuItem setTitle: runningStr];
     

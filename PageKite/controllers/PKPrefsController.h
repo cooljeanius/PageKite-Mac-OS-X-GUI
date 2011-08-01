@@ -22,16 +22,18 @@
 #import "STUtil.h"
 #import "RCTextView.h"
 #import "STRunAppOnLogin.h"
+#import "PKTaskController.h"
 
 @interface PKPrefsController : NSObject
 {
-    IBOutlet id     window;
-    IBOutlet id     configTextView;
-    IBOutlet id     restartCheckbox;
-    IBOutlet id     startOnLoginCheckbox;
-    IBOutlet id     connectOnLoginCheckbox;
-    IBOutlet id     restoreDefaultsButton;
-    IBOutlet id     showLogOnStartCheckbox;
+    IBOutlet id                 window;
+    IBOutlet id                 configTextView;
+    IBOutlet id                 restartCheckbox;
+    IBOutlet id                 startOnLoginCheckbox;
+    IBOutlet id                 connectOnLoginCheckbox;
+    IBOutlet id                 restoreDefaultsButton;
+    IBOutlet id                 showLogOnStartCheckbox;
+    IBOutlet PKTaskController   *taskController;
 }
 - (IBAction)showPreferences: (id)sender;
 - (IBAction)applyPrefs: (id)sender;

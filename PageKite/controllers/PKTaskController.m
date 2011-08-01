@@ -45,7 +45,13 @@
         [self stopPageKite];
     else
         [self startPageKite];
-}   
+}
+
+- (void)restartPageKite
+{
+    [self stopPageKite];
+    [self performSelector: @selector(startPageKite) withObject: nil afterDelay: 0.4];
+}
 
 - (void)startPageKite
 {

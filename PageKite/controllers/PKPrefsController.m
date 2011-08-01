@@ -43,6 +43,8 @@
     [connectOnLoginCheckbox setIntValue: [DEFAULTS boolForKey: @"ConnectOnLogin"]];
     [showLogOnStartCheckbox setIntValue: [DEFAULTS boolForKey: @"ShowLogOnStart"]];
     
+    [restartCheckbox setIntValue: TRUE];
+    
     // show restore defaults button if we have a default config saved
     if ([DEFAULTS objectForKey: @"DefaultConfig"] != nil)
         [restoreDefaultsButton setEnabled: YES]; 
@@ -69,7 +71,6 @@
     [DEFAULTS setObject: [NSNumber numberWithBool: [connectOnLoginCheckbox intValue]] forKey: @"ConnectOnLogin"];
     [DEFAULTS setObject: [NSNumber numberWithBool: [showLogOnStartCheckbox intValue]] forKey: @"ShowLogOnStart"];
     
-    
     // If config string has changed, write it to disk and save into defaults
     NSString *configStr = [configTextView string];
     NSString *configFileStr = [DEFAULTS objectForKey: @"Config"]; 
@@ -84,6 +85,10 @@
     
     // make sure defaults are saved to disk
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // restart checkbox to if we should restart task
+    if ([taskController running] && [restartCheckbox intValue] == TRUE)
+        [taskController restartPageKite];
     
     [window orderOut: self];
 }
@@ -107,6 +112,13 @@
 {
     //[restartCheckbox setHidden: (TRUE && TRUE)];
     [(RCTextView *)configTextView updateSyntaxColoring];
+    
+    // if config has changed and task is running, we show restart checkbox
+    if ([taskController running] && ![[DEFAULTS objectForKey: @"Config"] isEqualToString: [configTextView string]])
+    {
+        [restartCheckbox setHidden: FALSE];
+        [restartCheckbox setIntValue: TRUE];
+    }
 }
 
 
