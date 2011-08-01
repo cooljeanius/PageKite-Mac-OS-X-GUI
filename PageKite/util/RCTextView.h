@@ -19,7 +19,7 @@
 //
 
 
-
+#import "Common.h"
 #import <AppKit/AppKit.h>
 
 @interface RCTextView : NSTextView

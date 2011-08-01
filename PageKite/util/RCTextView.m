@@ -18,8 +18,6 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-
-
 #import "RCTextView.h"
 
 @implementation RCTextView
@@ -35,7 +33,7 @@
     [self removeSyntaxColoring];
     
     // default blue
-    [self setTextColor: [NSColor colorWithDeviceRed: 0 green: 0 blue: 0.5 alpha: 1] range: NSMakeRange(0, [[self string] length])];
+    [self setTextColor: PAGEKITE_RC_CONFIG_COLOR range: NSMakeRange(0, [[self string] length])];
     
     NSScanner* scanner = [NSScanner scannerWithString: [self string]];
     NSInteger start = 0, end = 0;
@@ -46,14 +44,14 @@
         start = [scanner scanLocation];
         [scanner scanUpToString: @"\n" intoString: nil];
         end = [scanner scanLocation];
-        [self setTextColor: [NSColor colorWithDeviceRed: 0.7 green: 0 blue:0 alpha: 1.0] range: NSMakeRange(start, end-start)];
+        [self setTextColor: PAGEKITE_RC_COMMENT_COLOR range: NSMakeRange(start, end-start)];
     }
     
     [scanner setScanLocation: 0];
     [scanner scanUpToString: @"\nEND\n" intoString: nil];
     start = [scanner scanLocation];
     
-    [self setTextColor: [NSColor colorWithDeviceRed: 0 green: 0.55 blue:0 alpha: 1.0] range: NSMakeRange(start, [[self string] length]-start)];
+    [self setTextColor: PAGEKITE_RC_END_COLOR range: NSMakeRange(start, [[self string] length]-start)];
 }
 
 - (void)removeSyntaxColoring

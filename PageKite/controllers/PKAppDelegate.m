@@ -25,6 +25,7 @@
 #pragma mark -
 #pragma mark App Delegate functions
 
+// called first time application is run
 + (void)initialize 
 { 
 	// create the user defaults here if none exists
@@ -46,16 +47,9 @@
 {
     // create status item
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength] retain];
-    
-    // create icons and set menu
-    disabledIcon = [NSImage imageNamed: @"pagekite-disabled.png"];	
-    enabledIcon = [NSImage imageNamed: @"pagekite-enabled.png"];
-    
 	[statusItem setHighlightMode: TRUE];
-	[statusItem setImage: disabledIcon];
+	[statusItem setImage: [NSImage imageNamed: @"pagekite-disabled.png"]];
 	[statusItem setMenu: menu];
-
-    // enable it
 	[statusItem setEnabled: YES];
     
     // add to login items
@@ -85,8 +79,8 @@
     NSString *enableDisable = [taskController running] ? @"Turn PageKite Off" : @"Turn PageKite On";
     [toggleMenuItem setTitle: enableDisable];
     
-    NSImage *icon = [taskController running] ? enabledIcon : disabledIcon;
-    [statusItem setImage: icon];
+    NSString *iconName = [taskController running] ? @"pagekite-enabled.png" : @"pagekite-disabled.png";
+    [statusItem setImage: [NSImage imageNamed: iconName]];
 }
 
 #pragma mark -

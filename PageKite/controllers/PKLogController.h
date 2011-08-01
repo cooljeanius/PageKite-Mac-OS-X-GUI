@@ -23,4 +23,5 @@
 - (void)setLog: (NSString *)string;
 - (void)appendToLog: (NSAttributedString *)string;
 
+- (NSAttributedString *)logString: (NSString *)string withColor: (NSColor *)color;
 @end

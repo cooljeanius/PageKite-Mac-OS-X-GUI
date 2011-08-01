@@ -18,6 +18,10 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+#import "Common.h"
+#import "STUtil.h"
+
+
 @protocol PKTaskDelegate <NSObject>
 - (void)taskRunningChanged;
 - (void)taskConnectedChanged;

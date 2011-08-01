@@ -33,8 +33,5 @@
     
     NSStatusItem        *statusItem;
     IBOutlet id         taskController;
-
-    NSImage             *disabledIcon;
-    NSImage             *enabledIcon;    
 }
 @end

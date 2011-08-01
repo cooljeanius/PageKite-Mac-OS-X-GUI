@@ -24,11 +24,17 @@
 
 - (IBAction)showPreferences: (id)sender
 {    
+    if ([window isVisible])
+    {
+        [STUtil forceFront];
+        [window makeKeyAndOrderFront: self];
+    }
+        
     // Read config file
     NSString *rcFileContents = [NSString stringWithContentsOfFile: PAGEKITE_RC_FILE_PATH usedEncoding: nil error: nil];
     
     // Configure text view
-    [configTextView setFont: [NSFont fontWithName: @"Monaco" size: 10.0]];
+    [configTextView setFont: PAGEKITE_LOG_FONT];
     [configTextView setString: rcFileContents];
     
     // update controls

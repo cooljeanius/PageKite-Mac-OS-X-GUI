@@ -54,17 +54,20 @@
     
     // Create task
     pkTask = [[NSTask alloc] init];
-    NSString *pkPath = [[NSBundle mainBundle] pathForResource: @"pagekite.py" ofType: nil]; 
+    NSString *pkPath = [[NSBundle mainBundle] pathForResource: PAGEKITE_FILENAME ofType: nil]; 
+    if (!pkTask || !pkPath)
+        [STUtil alert: @"Error launching task" subText: [NSString stringWithFormat: @"Couldn't execute '%s'", PAGEKITE_FILENAME]];
     
-    [pkTask setLaunchPath: @"/usr/bin/python"]; // default python interpreter path in Mac OS X
-    [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
+    [pkTask setLaunchPath: pkPath];
     
-    // Register to receive notification on task output to stdout and stderr
+    // Capture all program output in filehandles
+    // Then register to receive notification on task output to stdout and stderr
     
         //stdout
         stdoutPipe = [NSPipe pipe];
         [pkTask setStandardOutput: stdoutPipe];
-       
+        [pkTask setStandardError: stdoutPipe];
+    
         stdoutReadHandle = [stdoutPipe fileHandleForReading];
         [[NSNotificationCenter defaultCenter] addObserver: self 
                                                  selector: @selector(receivedTaskOutput:) 
@@ -73,32 +76,34 @@
         [stdoutReadHandle readInBackgroundAndNotify];
         
         // stderrr
-        stderrPipe = [NSPipe pipe];
-        [pkTask setStandardError: stderrPipe];
-        
-        stderrReadHandle = [stderrPipe fileHandleForReading];
-        [[NSNotificationCenter defaultCenter] addObserver: self 
-                                                 selector: @selector(receivedTaskOutput:) 
-                                                     name: NSFileHandleReadCompletionNotification 
-                                                   object: stderrReadHandle];
-        [stderrReadHandle readInBackgroundAndNotify];
-        
-    // Register to receive notifications on task termination
-	[[NSNotificationCenter defaultCenter] addObserver: self
+//        stderrPipe = [NSPipe pipe];
+//        
+//        
+//        stderrReadHandle = [stderrPipe fileHandleForReading];
+//        [[NSNotificationCenter defaultCenter] addObserver: self 
+//                                                 selector: @selector(receivedTaskOutput:) 
+//                                                     name: NSFileHandleReadCompletionNotification 
+//                                                   object: stderrReadHandle];
+//        [stderrReadHandle readInBackgroundAndNotify];
+    
+    // Register for termination notification
+    [[NSNotificationCenter defaultCenter] addObserver: self
 											 selector: @selector(taskEnded:)
 												 name: NSTaskDidTerminateNotification
 											   object: NULL];
 	
 	//set it off
-    [pkTask launch];
-    
     [self setRunning: TRUE];
+    [pkTask launch];
 }
 
 - (void)stopPageKite
 {
     if (running)
+    {
+        NSLog(@"Stopping PageKite");
         [pkTask terminate];
+    }
 }
 
 #pragma mark -
@@ -128,7 +133,6 @@
         
         if (outputString)
         {
-            NSLog(outputString);
             // send output string to log delegate
             if ([aNotification object] == stderrReadHandle)
             {
