@@ -63,7 +63,8 @@
     if (!pkTask || !pkPath)
         [STUtil alert: @"Error launching task" subText: [NSString stringWithFormat: @"Couldn't execute '%s'", PAGEKITE_FILENAME]];
     
-    [pkTask setLaunchPath: pkPath];
+    [pkTask setLaunchPath: @"/usr/bin/python"];
+    [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
     
     // Capture all program output in filehandles
     // Then register to receive notification on task output to stdout and stderr

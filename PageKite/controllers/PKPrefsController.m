@@ -129,9 +129,9 @@
 
 - (void)windowWillClose:(NSNotification *)notification
 {
-    NSLog(@"Retain count: %d , Wdinow closing, releasing", (int)[self retainCount]);
-    
-	[self release];
+//    NSLog(@"Retain count: %d , Wdinow closing, releasing", (int)[self retainCount]);
+//    
+//	[self release];
 }
 
 @end

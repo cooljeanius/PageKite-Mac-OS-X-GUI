@@ -69,11 +69,9 @@
         prefsController = [[PKPrefsController alloc] init];
         [NSBundle loadNibNamed:@"Preferences" owner: prefsController];    
         NSLog(@"SHowing");
-        [prefsController showWindow: sender];
+        
     }
-    else
-        NSLog(@"Retaincount: %d", [prefsController retainCount]);
-    
+    [prefsController showWindow: sender];
 }
 
 #pragma mark -
