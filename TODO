@@ -1,0 +1,9 @@
+
+TODO list for PageKite Mac OS X GUI
+
+* Fix prefs controller nib loading 
+* Complete setup UI
+* Connection status display
+* Signup integrated w. pagekite tool
+* Default rc file integrated w. pagekite tool
+* Create animations for connecting icon

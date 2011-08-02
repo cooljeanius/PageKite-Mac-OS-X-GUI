@@ -375,6 +375,7 @@
 		F4E8562A13E33EF100D6FBAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKite/PageKite-Prefix.pch";
 				INFOPLIST_FILE = "PageKite/PageKite-Info.plist";
@@ -387,6 +388,7 @@
 		F4E8562B13E33EF100D6FBAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKite/PageKite-Prefix.pch";
 				INFOPLIST_FILE = "PageKite/PageKite-Info.plist";
