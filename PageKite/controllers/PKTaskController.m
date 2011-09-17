@@ -64,7 +64,7 @@
         [STUtil alert: @"Error launching task" subText: [NSString stringWithFormat: @"Couldn't execute '%s'", PAGEKITE_FILENAME]];
     
     [pkTask setLaunchPath: @"/usr/bin/python"];
-    [pkTask setArguments: [NSArray arrayWithObject: pkPath]];
+    [pkTask setArguments: [NSArray arrayWithObjects: pkPath, @"--remoteui", nil]];
     
     // Capture all program output in filehandles
     // Then register to receive notification on task output to stdout and stderr
